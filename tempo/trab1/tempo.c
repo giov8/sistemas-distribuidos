@@ -3,7 +3,7 @@ Autor: Giovani G Marciniak
 GRR20182981
 
 Arquivo: tempo.c
-Modificado em 14/12/2020
+Modificado em 15/12/2020
 Descrição:
 Primeiro trabalho prático de Sistemas Distribuídos.
 Implementação do algoritmo VRING no ambiente de simulação SMPL.
@@ -87,6 +87,8 @@ int main(int argc, char const *argv[])
 
 	// Cronograma dos eventos (escalonamento)
 	schedule(FAULT, 31.0, 1); 			//o processo 1 falha no tempo 31
+	schedule(FAULT, 91.0, 2);
+	schedule(FAULT, 151.0,3);
 	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
 
 	int count_rodada = 1;
@@ -140,6 +142,11 @@ int main(int argc, char const *argv[])
 						if (!processo[token].state[i_next]%2)  //se o valor no vetor state for par, incrementa o valor
 							processo[token].state[i_next]++;
 
+						if (i == (N-1)) {
+							printf("\nATENÇÃO: Todos os processos estão falhos, exceto o processo %d\nFim da execução.\n", token);
+							exit(1);
+						}
+
 						//verifica se está em processo de diagnostico
 						if (!evento_diagnosticado) {
 							if (evento_valor < 0) evento_valor = processo[token].state[i_next]; //se for o primeiro a encontrar o erro
@@ -163,7 +170,6 @@ int main(int argc, char const *argv[])
 							if (processo[token].state[j] < processo[i_next].state[j])
 							processo[token].state[j] = processo[i_next].state[j];
 							j = (j+1)%N;
-
 						}
 
 						//imprime vetor state
@@ -176,11 +182,6 @@ int main(int argc, char const *argv[])
 						break;
 					}
 				}
-
-				//if (i == N) {
-				//	printf("ATENÇÃO: Todos os processos estão falhos, exceto o processo %d\n", token);
-					//exit(1);  //???
-				//}
 
 				printf("----------------------------------------------------\n");
 				schedule(TEST, TEST_INTERVAL, token);

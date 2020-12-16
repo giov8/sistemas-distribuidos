@@ -91,17 +91,19 @@ int main(int argc, char const *argv[])
 				// O nodo não falho testa o próximo:
 				for (i = 1; i < N; i++)
 				{
-					if (status(processo[(token+i)%N].id) != 0)
+					if (status(processo[(token+i)%N].id) != 0) {
 						printf("O processo %d testou o processo %d FALHO no tempo %4.1f\n", token, (token+i)%N, time());
+					
+						if (i == (N-1)) {
+							printf("\nATENÇÃO: Todos os processos estão falhos, exceto o processo %d\nFim da execução.\n", token);
+							exit(1);
+						}
+
+					}
 					else {
 						printf("O processo %d testou o processo %d CORRETO no tempo %4.1f\n", token, (token+i)%N, time());
 						break;
 					}
-				}
-
-				if (i == N) {
-					printf("ATENÇÃO: Todos os processos estão falhos, exceto o processo %d\n", token);
-					//exit(1);  //???
 				}
 
 				printf("----------------------------------------------------\n");

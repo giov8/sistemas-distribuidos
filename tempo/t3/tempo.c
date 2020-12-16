@@ -69,13 +69,6 @@ int main(int argc, char const *argv[])
 		}
 	}
 
-	/*// imprime vetor
-	printf("VETOR STATE DO PROCESSO %d\n(processo,status) = [", PROCeSSOAQUI);
-	for (i=0;i<N;i++) {
-		printf(" (%d,%d)",i,processo[1].state[i]);
-	}
-	printf(" ]\n");*/
-
 	// Vamos fazer o escalonamento incial de eventos
 	// nossos processos vão executar testes
 	// o intervalo de testes vai ser de 30 unidades de tempo
@@ -111,6 +104,12 @@ int main(int argc, char const *argv[])
 						// caso o estado do nodo testado esteja diferente do vetor state, corrige
 						if (processo[token].state[i_next] != OFFLINE)
 							processo[token].state[i_next] = OFFLINE;
+
+						if (i == (N-1)) {
+							printf("\nATENÇÃO: Todos os processos estão falhos, exceto o processo %d\nFim da execução.\n", token);
+							exit(1);
+						}
+
 					}
 					else {
 						printf("O processo %d testou o processo %d CORRETO no tempo %4.1f\n", token, (token+i)%N, time());
@@ -128,11 +127,6 @@ int main(int argc, char const *argv[])
 						break;
 					}
 				}
-
-				//if (i == N) {
-				//	printf("ATENÇÃO: Todos os processos estão falhos, exceto o processo %d\n", token);
-					//exit(1);  //???
-				//}
 
 				printf("----------------------------------------------------\n");
 				schedule(TEST, TEST_INTERVAL, token);
