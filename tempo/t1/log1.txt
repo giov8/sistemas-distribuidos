@@ -1,0 +1,23 @@
+****************************************************
+Quantidade de processos: 4 processos
+Intervalo de testes: 30.0 unidades de tempo
+Tempo máximo de execução: 150.0 unidades de tempo
+****************************************************
+O processo 0 testou o processo 1 CORRETO no tempo 30.0
+O processo 1 testou o processo 2 CORRETO no tempo 30.0
+O processo 2 testou o processo 3 CORRETO no tempo 30.0
+O processo 3 testou o processo 0 CORRETO no tempo 30.0
+O processo 1 falhou no tempo 31.0
+O processo 0 testou o processo 1 FALHO no tempo 60.0
+O processo 2 testou o processo 3 CORRETO no tempo 60.0
+O processo 3 testou o processo 0 CORRETO no tempo 60.0
+O processo 1 recuperou no tempo 61.0
+O processo 0 testou o processo 1 CORRETO no tempo 90.0
+O processo 2 testou o processo 3 CORRETO no tempo 90.0
+O processo 3 testou o processo 0 CORRETO no tempo 90.0
+O processo 1 testou o processo 2 CORRETO no tempo 91.0
+O processo 0 testou o processo 1 CORRETO no tempo 120.0
+O processo 2 testou o processo 3 CORRETO no tempo 120.0
+O processo 3 testou o processo 0 CORRETO no tempo 120.0
+O processo 1 testou o processo 2 CORRETO no tempo 121.0
+O processo 0 testou o processo 1 CORRETO no tempo 150.0

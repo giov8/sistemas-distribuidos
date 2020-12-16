@@ -1,0 +1,33 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+*********** SIMULAÇÃO DO ALGORITMO VRING ***********
+
+QUANTIDADE DE PROCESSOS: 2 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 600.0 unidades de tempo
+****************************************************
+
+Início da execução...
+
+
+INÍCIO DA RODADA 1...
+O processo 0 testou o processo 1 CORRETO no tempo 30.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 0 CORRETO no tempo 30.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) ]
+----------------------------------------------------
+
+O processo 1 falhou no tempo 31.0
+
+
+INÍCIO DA RODADA 2...
+O processo 0 testou o processo 1 FALHO no tempo 60.0
+
+ATENÇÃO: Todos os processos estão falhos, exceto o processo 0
+Fim da execução.

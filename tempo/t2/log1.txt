@@ -1,0 +1,21 @@
+****************************************************
+QUANTIDADE DE PROCESSOS: 4 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 150.0 unidades de tempo
+****************************************************
+O processo 1 falhou no tempo  1.0
+O processo 0 testou o processo 1 FALHO no tempo 30.0
+O processo 0 testou o processo 2 CORRETO no tempo 30.0
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 30.0
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 30.0
+----------------------------------------------------
+O processo 2 falhou no tempo 31.0
+O processo 3 falhou no tempo 58.0
+O processo 0 testou o processo 1 FALHO no tempo 60.0
+O processo 0 testou o processo 2 FALHO no tempo 60.0
+O processo 0 testou o processo 3 FALHO no tempo 60.0
+
+ATENÇÃO: Todos os processos estão falhos, exceto o processo 0
+Fim da execução.

@@ -1,0 +1,69 @@
+****************************************************
+QUANTIDADE DE PROCESSOS: 4 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 150.0 unidades de tempo
+****************************************************
+O processo 0 testou o processo 1 CORRETO no tempo 30.0
+# VETOR STATE DO PROCESSO 0 #
+(processo,status) = [ (0,0) (1,0) (2,-1) (3,-1) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 30.0
+# VETOR STATE DO PROCESSO 1 #
+(processo,status) = [ (0,-1) (1,0) (2,0) (3,-1) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 30.0
+# VETOR STATE DO PROCESSO 2 #
+(processo,status) = [ (0,-1) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 30.0
+# VETOR STATE DO PROCESSO 3 #
+(processo,status) = [ (0,0) (1,0) (2,-1) (3,0) ]
+----------------------------------------------------
+O processo 1 falhou no tempo 31.0
+O processo 0 testou o processo 1 FALHO no tempo 60.0
+O processo 0 testou o processo 2 CORRETO no tempo 60.0
+# VETOR STATE DO PROCESSO 0 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 60.0
+# VETOR STATE DO PROCESSO 2 #
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 60.0
+# VETOR STATE DO PROCESSO 3 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 0 testou o processo 1 FALHO no tempo 90.0
+O processo 0 testou o processo 2 CORRETO no tempo 90.0
+# VETOR STATE DO PROCESSO 0 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 90.0
+# VETOR STATE DO PROCESSO 2 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 90.0
+# VETOR STATE DO PROCESSO 3 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 recuperou no tempo 91.0
+O processo 0 testou o processo 1 CORRETO no tempo 120.0
+# VETOR STATE DO PROCESSO 0 #
+(processo,status) = [ (0,0) (1,0) (2,0) (3,-1) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 120.0
+# VETOR STATE DO PROCESSO 2 #
+(processo,status) = [ (0,0) (1,1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 120.0
+# VETOR STATE DO PROCESSO 3 #
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 121.0
+# VETOR STATE DO PROCESSO 1 #
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 0 testou o processo 1 CORRETO no tempo 150.0
+# VETOR STATE DO PROCESSO 0 #
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------

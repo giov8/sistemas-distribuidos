@@ -1,0 +1,335 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+*********** SIMULAÇÃO DO ALGORITMO VRING ***********
+
+QUANTIDADE DE PROCESSOS: 4 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 500.0 unidades de tempo
+****************************************************
+
+Início da execução...
+
+O processo 1 falhou no tempo  1.0
+
+
+INÍCIO DA RODADA 1...
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 1
+EVENTO: Falhou
+LATÊNCIA: 0 rodadas
+TESTES EXECUTADOS: 0 testes
+
+O processo 0 testou o processo 1 FALHO no tempo 30.0
+O processo 0 testou o processo 2 CORRETO no tempo 30.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,-1) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 30.0
+> Vetor state do processo 2
+(processo,status) = [ (0,-1) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 30.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 2...
+O processo 0 testou o processo 1 FALHO no tempo 60.0
+O processo 0 testou o processo 2 CORRETO no tempo 60.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 60.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 60.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 3...
+O processo 0 testou o processo 1 FALHO no tempo 90.0
+O processo 0 testou o processo 2 CORRETO no tempo 90.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 90.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 90.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+
+O processo 1 recuperou no tempo 91.0
+
+
+INÍCIO DA RODADA 4...
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 1
+EVENTO: Falhou
+LATÊNCIA: 0 rodadas
+TESTES EXECUTADOS: 0 testes
+
+O processo 0 testou o processo 1 CORRETO no tempo 120.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 120.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,-1) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 120.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 121.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 5...
+O processo 0 testou o processo 1 CORRETO no tempo 150.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 150.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 150.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 151.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 6...
+O processo 0 testou o processo 1 CORRETO no tempo 180.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 180.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 180.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 181.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 7...
+O processo 0 testou o processo 1 CORRETO no tempo 210.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 210.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 210.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 211.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 8...
+O processo 0 testou o processo 1 CORRETO no tempo 240.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 240.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 240.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 241.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 9...
+O processo 0 testou o processo 1 CORRETO no tempo 270.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 270.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 270.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 271.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 10...
+O processo 0 testou o processo 1 CORRETO no tempo 300.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 300.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 300.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 301.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 11...
+O processo 0 testou o processo 1 CORRETO no tempo 330.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 330.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 330.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 331.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 12...
+O processo 0 testou o processo 1 CORRETO no tempo 360.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 360.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 360.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 361.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 13...
+O processo 0 testou o processo 1 CORRETO no tempo 390.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 390.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 390.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 391.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 14...
+O processo 0 testou o processo 1 CORRETO no tempo 420.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 420.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 420.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 421.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 15...
+O processo 0 testou o processo 1 CORRETO no tempo 450.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 450.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 450.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 451.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 16...
+O processo 0 testou o processo 1 CORRETO no tempo 480.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 2 testou o processo 3 CORRETO no tempo 480.0
+> Vetor state do processo 2
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 3 testou o processo 0 CORRETO no tempo 480.0
+> Vetor state do processo 3
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+O processo 1 testou o processo 2 CORRETO no tempo 481.0
+> Vetor state do processo 1
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+
+INÍCIO DA RODADA 17...
+O processo 0 testou o processo 1 CORRETO no tempo 510.0
+> Vetor state do processo 0
+(processo,status) = [ (0,0) (1,0) (2,0) (3,0) ]
+----------------------------------------------------
+
+Fim da execução.

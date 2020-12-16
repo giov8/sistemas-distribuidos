@@ -20,7 +20,7 @@ Implementação do algoritmo VRING no ambiente de simulação SMPL.
 
 // Outras definições
 #define TEST_INTERVAL 30.0 			// define o intervalo de testes
-#define MAX_TIME 500.0				// define o tempo máximo de execução da simulação
+#define MAX_TIME 300.0				// define o tempo máximo de execução da simulação
 
 #define UNKNOWN -1
 
@@ -86,10 +86,10 @@ int main(int argc, char const *argv[])
 	}
 
 	// Cronograma dos eventos (escalonamento)
-	schedule(FAULT, 1.0, 1); 			//o processo 1 falha no tempo 31
-	schedule(RECOVERY, 1.0, 1); 		//o processo volta ao tempo 61
-	//schedule(FAULT, 151.0, 2);
-	//schedule(FAULT, 300.0,3);
+	schedule(FAULT, 31.0, 1); 			//o processo 1 falha no tempo 31
+	schedule(FAULT, 151.0, 2);
+	schedule(FAULT, 211.0,3);
+	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
 
 	int count_rodada = 1;
 

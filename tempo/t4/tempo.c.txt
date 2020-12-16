@@ -20,7 +20,7 @@ Os processos agora compartilharão as informações novas do vetor state[N].
 
 // Outras definições
 #define TEST_INTERVAL 30.0
-#define MAX_TIME 150.0
+#define MAX_TIME 600.0
 
 #define UNKNOWN -1
 #define ONLINE 0
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[])
 
 	// Cronograma dos eventos (escalonamento)
 	schedule(FAULT, 31.0, 1); 			//o processo 1 falha no tempo 31
-	schedule(RECOVERY, 91.0, 1); 		//o processo volta ao tempo 61
+	schedule(RECOVERY, 61.0, 1); 		//o processo volta ao tempo 61
 
 	// Loop principal
 	while (time() < MAX_TIME) {
