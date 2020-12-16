@@ -151,7 +151,7 @@ int main(int argc, char const *argv[])
 			case RECOVERY:
 				release(processo[token].id, token);
 				printf("O processo %d recuperou no tempo %4.1f\n", token, time());
-				schedule(TEST, 30.0, token);
+				schedule(TEST, TEST_INTERVAL, token);
 				break;
 		}
 	}

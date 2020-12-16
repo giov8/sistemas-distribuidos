@@ -106,27 +106,11 @@ int main(int argc, char const *argv[])
 			case RECOVERY:
 				release(processo[token].id, token);
 				printf("O processo %d recuperou no tempo %4.1f\n", token, time());
-				schedule(TEST, 30.0, token);
+				schedule(TEST, TEST_INTERVAL, token);
 				break;
 		}
 	}
 	return(0);
 }
-
-/* tarefa 1: fazer cada um dos processos testar o seguinte no anel; testar com a função status do SMPL e imprimir (printf)
-o resultado de cada teste.
-Por exemplo: "O processo 1 testou o processo 2 correto"
-
-tarefa 2: cada processo correto executa testes até achar outro processo correto. Imprimir os testes e resultados.
-
-tarefa 3: cada processo mantém localmente um vetor State[N]
-inicializa o State[N] com -1 para as N entraas indicando "unknown"
-atualiza as entradas correspondentes do State[] ao testar
-
-tarefa 4: quando um processo correto testa outro processo correto obtém as informações de diagnóstico
-do processo testado sobre todos os processos do sistema exceto aqueles que testou nesta rodada*/
-
-
-
 
 
