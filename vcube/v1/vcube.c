@@ -3,7 +3,7 @@ Autor: Giovani G Marciniak
 GRR20182981
 
 Arquivo: vcube.c
-Modificado em 21/01/2021
+Modificado em 25/01/2021
 Descrição:
 Segundo trabalho prático da disciplina Sistemas Distribuídos.
 Implementação do algoritmo VCUBE V1 no ambiente de simulação SMPL.
@@ -20,7 +20,7 @@ Implementação do algoritmo VCUBE V1 no ambiente de simulação SMPL.
 
 // Outras definições
 #define TEST_INTERVAL 30.0 			// define o intervalo de testes
-#define MAX_TIME 500.0				// define o tempo máximo de execução da simulação
+#define MAX_TIME 150.0				// define o tempo máximo de execução da simulação
 #define UNKNOWN -1
 
 // Vamos definir o descritor do processo
@@ -126,8 +126,8 @@ int main(int argc, char const *argv[])
 	}
 
 	// Cronograma dos eventos (escalonamento)
-	schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
-	schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
+	//schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
+	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
 	//schedule(FAULT, 151.0, 2);
 	//schedule(FAULT, 300.0,3);
 
@@ -144,11 +144,8 @@ int main(int argc, char const *argv[])
 	// Cálculo do número máximo de clusters
 	static int max_s = 1;
 
-	while (N > pow_int(2, max_s)) {
-		//printf("pow int: %d\n", pow_int(2, max_s+1));
-		max_s++;
-	}
-
+	while (N > pow_int(2, max_s)) max_s++;
+	
 	// Loop principal
 	while (time() < MAX_TIME) {
 		cause(&event, &token); //token retorna id do processo que tá executando agora

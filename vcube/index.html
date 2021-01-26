@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<body background="background2.jpg">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<center>
+<h1 style="font-family:verdana;">TRABALHO 2 - VCUBE</h1>
+<h2 style="font-family:verdana;">Sistemas Distribuídos ERE2 2020</h2>
+<p style="font-family:verdana;">Giovani G. Marciniak - ggm18@inf.ufpr.br - GRR20182981
+<br><b>Professor:</b> Elias Procópio Duarte Jr.</p>
+</center>
+
+<h2 style="font-family:verdana;">Introdução</h2>
+<p style="font-family:verdana;">Este trabalho visa a implementação do algoritmo distribuído VRING. O algortimo faz o diagnóstico em um sistema distribuído realizando testes em forma de "anel". Cada processo do sistema mantém um vetor de estado com a situação (falho ou não-falho) dos demais processos. Esse trabalho foi feito de forma incremental, com 5 tarefas e mais o trabalho final. Nesta página estão disponíveis todas as tarefas, bem como, para cada tarefa, uma descrição e explicação sobre a minha implementação.</p>
+
+<h2 style="font-family:verdana;">Tarefa 0</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b> Digitar, compilar e executar o programa exemplo, "tempo.c".</p>
+<p style="font-family:verdana;">Essa tarefa foi feita durante a aula e serviu para entender um pouco o simulador. Definimos nele que usaremos uma <i>stream</i> no simulador, que significa que um processo será simulado por vez.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t0/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação da tarefa 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t0/log1.txt">log1.txt</a></td>
+    <td>Tempo: 150.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 31.0, processo 1 recupera no tempo 61.0</td>
+  </tr>
+
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Tarefa 1</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b> Fazer cada um dos processos testar o seguinte no anel. Implemente o teste com a função status() do SMPL e imprimir (printf) o resultado de cada teste executado. Por exemplo: “O processo i testou o processo j correto no tempo tal.”</p>
+<p style="font-family:verdana;">Foram criadas definições para intervalo de testes e tempo máximo, fala facilitar a mudança na hora dos testes. Cada processo agora testa o próximo. Se houverem 4 processos (N=4), então o processo 3 deve testar o processo 0, por isso eu utilizei o mod (%) N. Quando o contador atingir o N 4, retornará o index 0 que é o processo que deve ser testado.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t1/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação da tarefa 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t1/log1.txt">log1.txt</a></td>
+    <td>Tempo: 150.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 31.0, processo 1 recupera no tempo 61.0</td>
+  </tr>
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Tarefa 2</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b> Cada processo correto executa testes até achar outro processo correto. Lembre-se de tratar o caso em que todos os demais processos estão falhos. Imprimir os testes e resultados.</p>
+<p style="font-family:verdana;">Foi criado um laço que incrementa agora se não encontrar um processo correto ao testar. Se o processo encontrar outro processo falho na última iteração significa que todos os outros processos estão falhos exceto ele, então a execução termina.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t2/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação da tarefa 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t2/log1.txt">log1.txt</a></td>
+    <td>Tempo: 150.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 1.0, processo 2 falha no tempo 31.0, processo 3 falha no tempo 58.0</td>
+  </tr>
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Tarefa 3</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b> Cada processo mantém localmente o vetor State[N]. Inicializa o State[N] com -1 (indicando estado “unknown”) para todos os demais processos e 0 para o próprio processo. Nesta tarefa ao executar um teste, o processo atualiza a entrada correspondente no vetor State[N]. Em cada intervalo de testes, mostre o vetor State[N]. </p>
+<p style="font-family:verdana;">A estrutura do processo foi modificada para conter agora o vetor. Defini novamente novas definições para servirem como valores de desconhecido(-1), online(0) ou offline(1), para facilitar legibilidade. Optei para essa tarefa apenas mudar os valores, sem incrementações, conforme os processos são testados.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t3/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação da tarefa 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t3/log1.txt">log1.txt</a></td>
+    <td>Tempo: 150.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 31.0, processo 1 recupera no tempo 61.0</td>
+  </tr>
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Tarefa 4</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b> Quando um processo correto testa outro processo correto obtém as informações de diagnóstico do processo testado sobre todos os processos do sistema exceto aqueles que testou nesta rodada, além do próprio testador. </p>
+<p style="font-family:verdana;">Agora o processo que testa compara seu vetor com o vetor do que testou afim de procurar por informações que ainda não tem. A iteração começa com o número do processo TESTADO + 1 até o próprio processo testador, então os processos que já foram testados pelo TESTADOR não entram na iteração, portanto o TESTADOR não irá copiar informações de processos que testou nesta rodada.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t4/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação da tarefa 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="t4/log1.txt">log1.txt</a></td>
+    <td>Tempo: 150.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 31.0, processo 1 recupera no tempo 61.0</td>
+  </tr>
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Trabalho 1</h2>
+<p style="font-family:verdana;"><b>Descrição do professor:</b>Implemente o algoritmo VRing no ambiente de simulação SMPL, e mostre resultados para diversos valores de N e diversos eventos - um evento em um processo de cada vez, um evento só ocorre depois do evento anterior ser diagnosticado.</p>
+<p style="font-family:verdana;">Substituí as definições anteriores (-1,0,1) por valores, nos quais valores negativos significa estado do processo desconhecido, valores pares significam processo sem falha e valores ímpares significam processos com falha. Para fazer a contagem do diagnóstico, criei várias variáveis para salvar os valores para fazer comparação. A variável e<i>vento_diagnosticado</i> é uma booleana que enquanto estiver ativa muda o comportamento do programa, pois ele vai estar guardando as rodadas e testes que foram efetuados por ele. <b>Importante:</b> O programa só é capaz de diagnosticar um evento por vez e se outro evento acontecer antes do anterior ser diagnosticado as informações do anterior serão sobrescritas.</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="trab1/tempo.c.txt">tempo.c</a></td>
+    <td>Implementação do trabalho 0 em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="trab1/log1.txt">log1.txt</a></td>
+    <td>Tempo: 600.0<br>Processos: 2<br>Eventos: Processo 1 falha no tempo 31.0.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="trab1/log2.txt">log2.txt</a></td>
+    <td>Tempo: 240.0<br>Processos: 8<br>Eventos: Não há falhas.</td>
+  </tr>
+   <tr>
+    <td><a style="font-family:verdana;" href="trab1/log3.txt">log3.txt</a></td>
+   <td>Tempo: 300.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 31.0, processo 2 falha no tempo 151.0, processo 3 falha no tempo 211.0</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="trab1/log4.txt">log4.txt</a></td>
+   <td>Tempo: 500.0<br>Processos: 8<br>Eventos: Processo 1 falha no tempo 31.0, processo 1 recupera no tempo 271.0</td>
+  </tr>
+</table>
+<br>
+
+
+<br>
+<center>
+<p style="font-family:verdana;"><b>Última modificação:</b> 16/12/2020</p>
+
+</center>
+</body>
+</html>

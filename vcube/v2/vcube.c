@@ -20,7 +20,7 @@ Implementação do algoritmo VCUBE V2 no ambiente de simulação SMPL.
 
 // Outras definições
 #define TEST_INTERVAL 30.0 			// define o intervalo de testes
-#define MAX_TIME 500.0				// define o tempo máximo de execução da simulação
+#define MAX_TIME 150.0				// define o tempo máximo de execução da simulação
 #define UNKNOWN -1
 
 // Vamos definir o descritor do processo
@@ -127,7 +127,7 @@ int main(int argc, char const *argv[])
 	}
 
 	// Cronograma dos eventos (escalonamento)
-	schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
+	//schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
 	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
 	//schedule(FAULT, 151.0, 2);
 	//schedule(FAULT, 300.0,3);
@@ -199,7 +199,6 @@ int main(int argc, char const *argv[])
 					for (int j = 1; j <= tamanho_cluster; j++)
 					{
 						i_next = call_cisj(i, processo[token].s, j);
-						printf("i: %d  j: %d  inext: %d\n", i, j, i_next);
 						if (i_next != token) {
 							if (!(processo[token].state[i_next]%2) || (processo[token].state[i_next] == UNKNOWN)) break;
 							// se o processo for par no vetor state, o processo atual não é o responsavel por testar
@@ -243,7 +242,7 @@ int main(int argc, char const *argv[])
 								{
 									if(processo[token].state[j] < processo[i].state[j]) {
 										processo[token].state[j] = processo[i].state[j];
-										printf("Processo %d obteve informação do processo %d através do processo %d\n", token, j, i);
+										printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, j, i);
 									}
 								}
 								break;
