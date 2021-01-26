@@ -126,7 +126,7 @@ int main(int argc, char const *argv[])
 	}
 
 	// Cronograma dos eventos (escalonamento)
-	//schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
+	schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
 	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
 	//schedule(FAULT, 151.0, 2);
 	//schedule(FAULT, 300.0,3);
@@ -192,25 +192,19 @@ int main(int argc, char const *argv[])
 				{
 
 					//i_next corresponde ao proximo index que será testado
-					//do {
-						i_next = call_cisj(token, processo[token].s, i);
-					//} while (i_next < N)
+					i_next = call_cisj(token, processo[token].s, i);
 
-					// essa linha serve para que o número de processos não precise ser na base 2:
-					//if (i_next > N)
-					//	i_next = 
-
+					// serve para que o número de processos não precise ser na base 2
+					if (i_next >= N) {
+						printf("O processo %d não realizou testes nesta rodada\n", token);
+						break;
+					}
 
 					if (status(processo[i_next].id) != 0) {
 						printf("O processo %d testou o processo %d FALHO no tempo %4.1f\n", token, i_next, time());
 						// caso o estado do processo testado esteja diferente do vetor state, corrige
 						if (!processo[token].state[i_next]%2)  //se o valor no vetor state for par, incrementa o valor
 							processo[token].state[i_next]++;
-
-						if (i == (N-1)) {
-							printf("\nATENÇÃO: Todos os processos estão falhos, exceto o processo %d\nFim da execução.\n", token);
-							exit(1);
-						}
 
 						//verifica se está em processo de diagnostico
 						if (!evento_diagnosticado) {
@@ -240,7 +234,7 @@ int main(int argc, char const *argv[])
 
 							if(processo[token].state[i_next] < processo[i_correto].state[i_next]) {
 								processo[token].state[i_next] = processo[i_correto].state[i_next];
-								printf("Processo %d obteve informação do processo %d através do processo %d\n", token, i_next, i_correto);
+								printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, i_next, i_correto);
 							}
 
 						}

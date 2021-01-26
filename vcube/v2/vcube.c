@@ -144,11 +144,7 @@ int main(int argc, char const *argv[])
 
 	// Cálculo do número máximo de clusters
 	static int max_s = 1;
-
-	while (N > pow_int(2, max_s)) {
-		//printf("pow int: %d\n", pow_int(2, max_s+1));
-		max_s++;
-	}
+	while (N > pow_int(2, max_s)) max_s++;
 
 	// Loop principal
 	while (time() < MAX_TIME) {
