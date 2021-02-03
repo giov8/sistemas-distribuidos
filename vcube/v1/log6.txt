@@ -1,0 +1,347 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+*********** SIMULAÇÃO DO ALGORITMO VCUBE V1 ***********
+
+QUANTIDADE DE PROCESSOS: 10 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 249.0 unidades de tempo
+****************************************************
+
+Início da execução...
+
+
+INÍCIO DA RODADA 1...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 30.0
+state[0] = 0 0 -1 -1 -1 -1 -1 -1 -1 -1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 31.0
+state[1] = 0 0 -1 -1 -1 -1 -1 -1 -1 -1 
+
+Processo: 2  s: 1
+Testado: 3    Status: CORRETO    Tempo: 32.0
+state[2] = -1 -1 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 3  s: 1
+Testado: 2    Status: CORRETO    Tempo: 33.0
+state[3] = -1 -1 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 4  s: 1
+Testado: 5    Status: CORRETO    Tempo: 34.0
+state[4] = -1 -1 -1 -1 0 0 -1 -1 -1 -1 
+
+Processo: 5  s: 1
+Testado: 4    Status: CORRETO    Tempo: 35.0
+state[5] = -1 -1 -1 -1 0 0 -1 -1 -1 -1 
+
+Processo: 6  s: 1
+Testado: 7    Status: CORRETO    Tempo: 36.0
+state[6] = -1 -1 -1 -1 -1 -1 0 0 -1 -1 
+
+Processo: 7  s: 1
+Testado: 6    Status: CORRETO    Tempo: 37.0
+state[7] = -1 -1 -1 -1 -1 -1 0 0 -1 -1 
+
+Processo: 8  s: 1
+Testado: 9    Status: CORRETO    Tempo: 38.0
+state[8] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+Processo: 9  s: 1
+Testado: 8    Status: CORRETO    Tempo: 39.0
+state[9] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+
+
+INÍCIO DA RODADA 2...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 60.0
+state[0] = 0 0 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 1  s: 2
+Testado: 3    Status: CORRETO    Tempo: 61.0
+state[1] = 0 0 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 62.0
+state[2] = 0 0 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 3  s: 2
+Testado: 1    Status: CORRETO    Tempo: 63.0
+state[3] = 0 0 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 4  s: 2
+Testado: 6    Status: CORRETO    Tempo: 64.0
+state[4] = -1 -1 -1 -1 0 0 0 0 -1 -1 
+
+Processo: 5  s: 2
+Testado: 7    Status: CORRETO    Tempo: 65.0
+state[5] = -1 -1 -1 -1 0 0 0 0 -1 -1 
+
+Processo: 6  s: 2
+Testado: 4    Status: CORRETO    Tempo: 66.0
+state[6] = -1 -1 -1 -1 0 0 0 0 -1 -1 
+
+Processo: 7  s: 2
+Testado: 5    Status: CORRETO    Tempo: 67.0
+state[7] = -1 -1 -1 -1 0 0 0 0 -1 -1 
+
+Processo: 8  s: 2
+state[8] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+Processo: 9  s: 2
+state[9] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+
+
+INÍCIO DA RODADA 3...
+----------------------------------------------------
+Processo: 0  s: 3
+Testado: 4    Status: CORRETO    Tempo: 90.0
+state[0] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 1  s: 3
+Testado: 5    Status: CORRETO    Tempo: 91.0
+state[1] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 2  s: 3
+Testado: 6    Status: CORRETO    Tempo: 92.0
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 3
+Testado: 7    Status: CORRETO    Tempo: 93.0
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 3
+Testado: 0    Status: CORRETO    Tempo: 94.0
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 3
+Testado: 1    Status: CORRETO    Tempo: 95.0
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 3
+Testado: 2    Status: CORRETO    Tempo: 96.0
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 3
+Testado: 3    Status: CORRETO    Tempo: 97.0
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 3
+state[8] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+Processo: 9  s: 3
+state[9] = -1 -1 -1 -1 -1 -1 -1 -1 0 0 
+
+
+
+INÍCIO DA RODADA 4...
+----------------------------------------------------
+Processo: 0  s: 4
+Testado: 8    Status: CORRETO    Tempo: 120.0
+state[0] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 4
+Testado: 9    Status: CORRETO    Tempo: 121.0
+state[1] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 4
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 4
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 4
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 4
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 4
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 4
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 4
+Testado: 0    Status: CORRETO    Tempo: 128.0
+state[8] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 9  s: 4
+Testado: 1    Status: CORRETO    Tempo: 129.0
+state[9] = 0 0 0 0 0 0 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 5...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 150.0
+state[0] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 151.0
+state[1] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 1
+Testado: 3    Status: CORRETO    Tempo: 152.0
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 1
+Testado: 2    Status: CORRETO    Tempo: 153.0
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 1
+Testado: 5    Status: CORRETO    Tempo: 154.0
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 1
+Testado: 4    Status: CORRETO    Tempo: 155.0
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 1
+Testado: 7    Status: CORRETO    Tempo: 156.0
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 1
+Testado: 6    Status: CORRETO    Tempo: 157.0
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 1
+Testado: 9    Status: CORRETO    Tempo: 158.0
+state[8] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 9  s: 1
+Testado: 8    Status: CORRETO    Tempo: 159.0
+state[9] = 0 0 0 0 0 0 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 6...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 180.0
+state[0] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 2
+Testado: 3    Status: CORRETO    Tempo: 181.0
+state[1] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 182.0
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 2
+Testado: 1    Status: CORRETO    Tempo: 183.0
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 2
+Testado: 6    Status: CORRETO    Tempo: 184.0
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 2
+Testado: 7    Status: CORRETO    Tempo: 185.0
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 2
+Testado: 4    Status: CORRETO    Tempo: 186.0
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 2
+Testado: 5    Status: CORRETO    Tempo: 187.0
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 2
+state[8] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 9  s: 2
+state[9] = 0 0 0 0 0 0 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 7...
+----------------------------------------------------
+Processo: 0  s: 3
+Testado: 4    Status: CORRETO    Tempo: 210.0
+state[0] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 3
+Testado: 5    Status: CORRETO    Tempo: 211.0
+state[1] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 3
+Testado: 6    Status: CORRETO    Tempo: 212.0
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 3
+Testado: 7    Status: CORRETO    Tempo: 213.0
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 3
+Testado: 0    Status: CORRETO    Tempo: 214.0
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 3
+Testado: 1    Status: CORRETO    Tempo: 215.0
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 3
+Testado: 2    Status: CORRETO    Tempo: 216.0
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 3
+Testado: 3    Status: CORRETO    Tempo: 217.0
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 3
+state[8] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 9  s: 3
+state[9] = 0 0 0 0 0 0 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 8...
+----------------------------------------------------
+Processo: 0  s: 4
+Testado: 8    Status: CORRETO    Tempo: 240.0
+state[0] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 4
+Testado: 9    Status: CORRETO    Tempo: 241.0
+state[1] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 4
+state[2] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 3  s: 4
+state[3] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 4  s: 4
+state[4] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 5  s: 4
+state[5] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 6  s: 4
+state[6] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 7  s: 4
+state[7] = 0 0 0 0 0 0 0 0 -1 -1 
+
+Processo: 8  s: 4
+Testado: 0    Status: CORRETO    Tempo: 248.0
+state[8] = 0 0 0 0 0 0 0 0 0 0 
+
+Processo: 9  s: 4
+Testado: 1    Status: CORRETO    Tempo: 249.0
+state[9] = 0 0 0 0 0 0 0 0 0 0 
+
+
+Fim da execução.

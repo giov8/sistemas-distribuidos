@@ -3,7 +3,7 @@ Autor: Giovani G Marciniak
 GRR20182981
 
 Arquivo: vcube.c
-Modificado em 25/01/2021
+Modificado em 01/02/2021
 Descrição:
 Segundo trabalho prático da disciplina Sistemas Distribuídos.
 Implementação do algoritmo VCUBE V2 no ambiente de simulação SMPL.
@@ -20,7 +20,7 @@ Implementação do algoritmo VCUBE V2 no ambiente de simulação SMPL.
 
 // Outras definições
 #define TEST_INTERVAL 30.0 			// define o intervalo de testes
-#define MAX_TIME 150.0				// define o tempo máximo de execução da simulação
+#define MAX_TIME 274.0				// define o tempo máximo de execução da simulação
 #define UNKNOWN -1
 
 // Vamos definir o descritor do processo
@@ -123,14 +123,12 @@ int main(int argc, char const *argv[])
 	printf("Início da execução...\n");
 
 	for (i=0;i<N;i++) {
-		schedule(TEST, TEST_INTERVAL, i);
+		schedule(TEST, TEST_INTERVAL+i, i);
 	}
 
 	// Cronograma dos eventos (escalonamento)
-	//schedule(FAULT, 90.0, 1); 			//o processo 1 falha no tempo 31
-	//schedule(RECOVERY, 151.0, 1); 		//o processo volta ao tempo 61
-	//schedule(FAULT, 151.0, 2);
-	//schedule(FAULT, 300.0,3);
+	//schedule(FAULT, 130.0, 5); 			//o processo 5 falha no tempo 130.00
+	//schedule(RECOVERY, 392.0, 5); 		//o processo volta ao tempo 392.00
 
 	int count_rodada = 1;
 	int tamanho_cluster = 0;
@@ -152,13 +150,18 @@ int main(int argc, char const *argv[])
 
 		if (token == 0) {
 			printf("\n\nINÍCIO DA RODADA %d...\n", count_rodada);
+			printf("----------------------------------------------------\n");
 			count_rodada++;
+
+			if (!evento_diagnosticado) evento_latencia++; 
+
 			if (!evento_diagnosticado) { 		//se o evento não estiver diagnosticado, ou seja, existir um evento ativo
 				evento_diagnosticado = 1; 		// considera que será diagnosticado
 				
 				for (i = 0; i < N; i++) {
-					if ( (status(processo[i].id) == 0) && (i != evento_atual) ) { // se não for falho ou o atual
-						if (processo[i].state[evento_atual] != evento_valor) { // define os demais processos com o valor -1 (unknown)
+					// se não for falho ou o atual
+					if ( (status(processo[i].id) == 0) && (i != evento_atual) ) { 
+						if (processo[i].state[evento_atual] != evento_valor) {
 							evento_diagnosticado = 0;
 							evento_latencia++;
 							break;
@@ -182,7 +185,6 @@ int main(int argc, char const *argv[])
 			case TEST:
 				if ((status(processo[token].id)) != 0) break;	//se o processo está falho, não testará
 				
-				
 				// O processo não está falho, então testará outro
 				processo[token].s = (processo[token].s % max_s) + 1;
  				tamanho_cluster = pow_int(2, processo[token].s);
@@ -205,32 +207,38 @@ int main(int argc, char const *argv[])
 						{
 							if (status(processo[i].id) != 0)
 							{
-								printf("O processo %d testou o processo %d FALHO no tempo %4.1f\n", token, i, time());
+								printf("Testado: %d    Status: FALHO      Tempo: %4.1f\n", i, time());
 								// caso o estado do processo testado esteja diferente do vetor state, corrige
 								if (!processo[token].state[i]%2)
 									processo[token].state[i]++;
 							
+								// vai cair nesse caso se for um processo recuperado
+								if (processo[token].state[i_next] == UNKNOWN)
+									processo[token].state[i_next] = 1;
 
 								//verifica se está em processo de diagnostico
 								if (!evento_diagnosticado) {
-									if (evento_valor < 0)
-										evento_valor = processo[token].state[i]; //se for o primeiro a encontrar o erro
 									evento_testes++;
+									//se for o primeiro a encontrar o erro
+									if ((i == evento_atual)&&(evento_valor < 0))
+										evento_valor = processo[token].state[i]; 
 								}
+
 								break;
 							}
 
 							else
 							{
-								printf("O processo %d testou o processo %d CORRETO no tempo %4.1f\n", token, i, time());
+								printf("Testado: %d    Status: CORRETO    Tempo: %4.1f\n", i, time());
 								// caso o estado do processo testado esteja diferente do vetor state, corrige
 								if (processo[token].state[i]%2)
 									processo[token].state[i]++;
 
 								if (!evento_diagnosticado) {
-									if (evento_valor < 0)
-										evento_valor = processo[token].state[i]; //se for o primeiro a encontrar o erro
 									evento_testes++;
+									//se for o primeiro a encontrar o erro
+									if ((i == evento_atual)&&(evento_valor < 0))
+										evento_valor = processo[token].state[i]; 
 								}
 
 								// vai copiar o vetor state[N] dos que ele não testou (que tem valor maior)
@@ -238,7 +246,7 @@ int main(int argc, char const *argv[])
 								{
 									if(processo[token].state[j] < processo[i].state[j]) {
 										processo[token].state[j] = processo[i].state[j];
-										printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, j, i);
+										//printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, j, i);
 									}
 								}
 								break;
@@ -248,12 +256,11 @@ int main(int argc, char const *argv[])
 				}
 
 				//imprime vetor state
-				printf("> Vetor state do processo %d\n(processo,status) = [", token);
-				for (i=0; i<N; i++) {
-					printf(" (%d,%d)",i,processo[token].state[i]);
-				}
-				printf(" ]\n");
-				printf("----------------------------------------------------\n");
+				printf("state[%d] = ", token);
+						for (i=0; i<N; i++) {
+							printf("%d ",processo[token].state[i]);
+						}
+				printf("\n\n");
 				schedule(TEST, TEST_INTERVAL, token);
 				break;
 
@@ -271,7 +278,7 @@ int main(int argc, char const *argv[])
 					processo[token].state[(token+j)%N] = UNKNOWN; // define os demais processos com o valor -1 (unknown)
 				}
 
-				printf("\nO processo %d falhou no tempo %4.1f\n", token, time());
+				printf("O processo %d falhou no tempo %4.1f\n\n", token, time());
 				
 				// Reseta os valores de diagnóstico
 				evento_atual = token;
@@ -283,7 +290,7 @@ int main(int argc, char const *argv[])
 
 			case RECOVERY:
 				release(processo[token].id, token);
-				printf("\nO processo %d recuperou no tempo %4.1f\n", token, time());
+				printf("O processo %d recuperou no tempo %4.1f\n\n", token, time());
 				schedule(TEST, TEST_INTERVAL, token);
 
 				// Reseta os valores de diagnóstico

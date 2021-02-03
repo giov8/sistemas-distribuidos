@@ -1,0 +1,123 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+*********** SIMULAÇÃO DO ALGORITMO VCUBE V2 ***********
+
+QUANTIDADE DE PROCESSOS: 8 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 97.0 unidades de tempo
+****************************************************
+
+Início da execução...
+
+
+INÍCIO DA RODADA 1...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 30.0
+state[0] = 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 31.0
+state[1] = 0 0 -1 -1 -1 -1 -1 -1 
+
+Processo: 2  s: 1
+Testado: 3    Status: CORRETO    Tempo: 32.0
+state[2] = -1 -1 0 0 -1 -1 -1 -1 
+
+Processo: 3  s: 1
+Testado: 2    Status: CORRETO    Tempo: 33.0
+state[3] = -1 -1 0 0 -1 -1 -1 -1 
+
+Processo: 4  s: 1
+Testado: 5    Status: CORRETO    Tempo: 34.0
+state[4] = -1 -1 -1 -1 0 0 -1 -1 
+
+Processo: 5  s: 1
+Testado: 4    Status: CORRETO    Tempo: 35.0
+state[5] = -1 -1 -1 -1 0 0 -1 -1 
+
+Processo: 6  s: 1
+Testado: 7    Status: CORRETO    Tempo: 36.0
+state[6] = -1 -1 -1 -1 -1 -1 0 0 
+
+Processo: 7  s: 1
+Testado: 6    Status: CORRETO    Tempo: 37.0
+state[7] = -1 -1 -1 -1 -1 -1 0 0 
+
+
+
+INÍCIO DA RODADA 2...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 60.0
+state[0] = 0 0 0 0 -1 -1 -1 -1 
+
+Processo: 1  s: 2
+Testado: 3    Status: CORRETO    Tempo: 61.0
+state[1] = 0 0 0 0 -1 -1 -1 -1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 62.0
+state[2] = 0 0 0 0 -1 -1 -1 -1 
+
+Processo: 3  s: 2
+Testado: 1    Status: CORRETO    Tempo: 63.0
+state[3] = 0 0 0 0 -1 -1 -1 -1 
+
+Processo: 4  s: 2
+Testado: 6    Status: CORRETO    Tempo: 64.0
+state[4] = -1 -1 -1 -1 0 0 0 0 
+
+Processo: 5  s: 2
+Testado: 7    Status: CORRETO    Tempo: 65.0
+state[5] = -1 -1 -1 -1 0 0 0 0 
+
+Processo: 6  s: 2
+Testado: 4    Status: CORRETO    Tempo: 66.0
+state[6] = -1 -1 -1 -1 0 0 0 0 
+
+Processo: 7  s: 2
+Testado: 5    Status: CORRETO    Tempo: 67.0
+state[7] = -1 -1 -1 -1 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 3...
+----------------------------------------------------
+Processo: 0  s: 3
+Testado: 4    Status: CORRETO    Tempo: 90.0
+state[0] = 0 0 0 0 0 0 0 0 
+
+Processo: 1  s: 3
+Testado: 5    Status: CORRETO    Tempo: 91.0
+state[1] = 0 0 0 0 0 0 0 0 
+
+Processo: 2  s: 3
+Testado: 6    Status: CORRETO    Tempo: 92.0
+state[2] = 0 0 0 0 0 0 0 0 
+
+Processo: 3  s: 3
+Testado: 7    Status: CORRETO    Tempo: 93.0
+state[3] = 0 0 0 0 0 0 0 0 
+
+Processo: 4  s: 3
+Testado: 0    Status: CORRETO    Tempo: 94.0
+state[4] = 0 0 0 0 0 0 0 0 
+
+Processo: 5  s: 3
+Testado: 1    Status: CORRETO    Tempo: 95.0
+state[5] = 0 0 0 0 0 0 0 0 
+
+Processo: 6  s: 3
+Testado: 2    Status: CORRETO    Tempo: 96.0
+state[6] = 0 0 0 0 0 0 0 0 
+
+Processo: 7  s: 3
+Testado: 3    Status: CORRETO    Tempo: 97.0
+state[7] = 0 0 0 0 0 0 0 0 
+
+
+Fim da execução.

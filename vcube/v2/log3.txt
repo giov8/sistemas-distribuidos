@@ -1,0 +1,313 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+*********** SIMULAÇÃO DO ALGORITMO VCUBE V2 ***********
+
+QUANTIDADE DE PROCESSOS: 4 processos
+INTERVALO DE TESTES: 30.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 480.0 unidades de tempo
+****************************************************
+
+Início da execução...
+
+
+INÍCIO DA RODADA 1...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 30.0
+state[0] = 0 0 -1 -1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 31.0
+state[1] = 0 0 -1 -1 
+
+Processo: 2  s: 1
+Testado: 3    Status: CORRETO    Tempo: 32.0
+state[2] = -1 -1 0 0 
+
+Processo: 3  s: 1
+Testado: 2    Status: CORRETO    Tempo: 33.0
+state[3] = -1 -1 0 0 
+
+
+
+INÍCIO DA RODADA 2...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 60.0
+state[0] = 0 0 0 0 
+
+Processo: 1  s: 2
+Testado: 3    Status: CORRETO    Tempo: 61.0
+state[1] = 0 0 0 0 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 62.0
+state[2] = 0 0 0 0 
+
+Processo: 3  s: 2
+Testado: 1    Status: CORRETO    Tempo: 63.0
+state[3] = 0 0 0 0 
+
+
+
+INÍCIO DA RODADA 3...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 90.0
+state[0] = 0 0 0 0 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 91.0
+state[1] = 0 0 0 0 
+
+O processo 3 falhou no tempo 92.0
+
+Processo: 2  s: 1
+Testado: 3    Status: FALHO    Tempo: 92.0
+state[2] = 0 0 0 1 
+
+
+
+INÍCIO DA RODADA 4...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 120.0
+state[0] = 0 0 0 1 
+
+Processo: 1  s: 2
+Testado: 3    Status: FALHO    Tempo: 121.0
+state[1] = 0 0 0 1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 122.0
+Testado: 1    Status: CORRETO    Tempo: 122.0
+state[2] = 0 0 0 1 
+
+
+
+INÍCIO DA RODADA 5...
+----------------------------------------------------
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 3
+EVENTO: Falhou
+LATÊNCIA: 3 rodadas
+TESTES EXECUTADOS: 5 testes
+
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 150.0
+state[0] = 0 0 0 1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 151.0
+state[1] = 0 0 0 1 
+
+Processo: 2  s: 1
+Testado: 2    Status: CORRETO    Tempo: 152.0
+Testado: 3    Status: FALHO    Tempo: 152.0
+state[2] = 0 0 0 1 
+
+O processo 1 falhou no tempo 153.0
+
+
+
+INÍCIO DA RODADA 6...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 180.0
+state[0] = 0 0 0 1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 182.0
+Testado: 1    Status: FALHO    Tempo: 182.0
+state[2] = 0 1 0 1 
+
+
+
+INÍCIO DA RODADA 7...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: FALHO    Tempo: 210.0
+state[0] = 0 1 0 1 
+
+Processo: 2  s: 1
+Testado: 0    Status: CORRETO    Tempo: 212.0
+Testado: 2    Status: CORRETO    Tempo: 212.0
+Testado: 3    Status: FALHO    Tempo: 212.0
+state[2] = 0 1 0 1 
+
+
+
+INÍCIO DA RODADA 8...
+----------------------------------------------------
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 1
+EVENTO: Falhou
+LATÊNCIA: 5 rodadas
+TESTES EXECUTADOS: 7 testes
+
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 240.0
+Testado: 3    Status: FALHO    Tempo: 240.0
+state[0] = 0 1 0 1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 242.0
+Testado: 1    Status: FALHO    Tempo: 242.0
+state[2] = 0 1 0 1 
+
+
+
+INÍCIO DA RODADA 9...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: FALHO    Tempo: 270.0
+state[0] = 0 1 0 1 
+
+O processo 1 recuperou no tempo 271.0
+
+Processo: 2  s: 1
+Testado: 0    Status: CORRETO    Tempo: 272.0
+Testado: 2    Status: CORRETO    Tempo: 272.0
+Testado: 3    Status: FALHO    Tempo: 272.0
+state[2] = 0 1 0 1 
+
+
+
+INÍCIO DA RODADA 10...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 300.0
+Testado: 3    Status: FALHO    Tempo: 300.0
+state[0] = 0 1 0 1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 301.0
+state[1] = 0 1 0 1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 302.0
+Testado: 1    Status: CORRETO    Tempo: 302.0
+state[2] = 0 2 0 1 
+
+
+
+INÍCIO DA RODADA 11...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 330.0
+state[0] = 0 2 0 1 
+
+Processo: 1  s: 2
+Testado: 3    Status: FALHO    Tempo: 331.0
+state[1] = 0 1 0 1 
+
+Processo: 2  s: 1
+Testado: 2    Status: CORRETO    Tempo: 332.0
+Testado: 3    Status: FALHO    Tempo: 332.0
+state[2] = 0 2 0 1 
+
+
+
+INÍCIO DA RODADA 12...
+----------------------------------------------------
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 1
+EVENTO: Recuperou
+LATÊNCIA: 5 rodadas
+TESTES EXECUTADOS: 12 testes
+
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 360.0
+state[0] = 0 2 0 1 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 361.0
+state[1] = 0 2 0 1 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 362.0
+Testado: 1    Status: CORRETO    Tempo: 362.0
+state[2] = 0 2 0 1 
+
+
+
+INÍCIO DA RODADA 13...
+----------------------------------------------------
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 390.0
+state[0] = 0 2 0 1 
+
+Processo: 1  s: 2
+Testado: 3    Status: FALHO    Tempo: 391.0
+state[1] = 0 2 0 1 
+
+O processo 3 recuperou no tempo 392.0
+
+Processo: 2  s: 1
+Testado: 2    Status: CORRETO    Tempo: 392.0
+Testado: 3    Status: CORRETO    Tempo: 392.0
+state[2] = 0 2 0 2 
+
+
+
+INÍCIO DA RODADA 14...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 420.0
+state[0] = 0 2 0 2 
+
+Processo: 1  s: 1
+Testado: 0    Status: CORRETO    Tempo: 421.0
+state[1] = 0 2 0 2 
+
+Processo: 3  s: 1
+Testado: 2    Status: CORRETO    Tempo: 422.0
+state[3] = 0 2 0 2 
+
+Processo: 2  s: 2
+Testado: 0    Status: CORRETO    Tempo: 422.0
+state[2] = 0 2 0 2 
+
+
+
+INÍCIO DA RODADA 15...
+----------------------------------------------------
+
+EVENTO DIAGNOSTICADO!!!
+PROCESSO: 3
+EVENTO: Recuperou
+LATÊNCIA: 3 rodadas
+TESTES EXECUTADOS: 6 testes
+
+Processo: 0  s: 1
+Testado: 1    Status: CORRETO    Tempo: 450.0
+state[0] = 0 2 0 2 
+
+Processo: 1  s: 2
+Testado: 3    Status: CORRETO    Tempo: 451.0
+state[1] = 0 2 0 2 
+
+Processo: 3  s: 2
+Testado: 1    Status: CORRETO    Tempo: 452.0
+state[3] = 0 2 0 2 
+
+Processo: 2  s: 1
+Testado: 3    Status: CORRETO    Tempo: 452.0
+state[2] = 0 2 0 2 
+
+
+
+INÍCIO DA RODADA 16...
+----------------------------------------------------
+Processo: 0  s: 2
+Testado: 2    Status: CORRETO    Tempo: 480.0
+state[0] = 0 2 0 2 
+
+
+Fim da execução.
