@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<body background="background3.jpeg">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<center>
+<h1 style="font-family:verdana;">TRABALHO 3 - BEST-EFFORT BROADCAST SOBRE VCUBE V1 (Modificação)  </h1>
+<h2 style="font-family:verdana;">Sistemas Distribuídos ERE2 2020</h2>
+<p style="font-family:verdana;">Giovani G. Marciniak - ggm18@inf.ufpr.br - GRR20182981
+<br><b>Professor:</b> Elias Procópio Duarte Jr.</p>
+</center>
+
+<h2 style="font-family:verdana;">Introdução</h2>
+<p style="font-family:verdana;">Este trabalho visa a implementação do algortimo Best-Effort Broadcast sobre a versão 1 (original) do algoritmo distribuído VCube, no ambiente de simulaçao SMPL. O algortimo VCUBE faz o diagnóstico em um sistema distribuído realizando testes em forma de "hipercubo", com a ajuda da tabela C(i,s) (abaixo). Cada processo do sistema mantém um vetor de estado com a situação (falho ou não-falho) dos demais processos. Já o algortimo Best-Effort Broadcast garante que todos os processos corretos entregam o mesmo conjunto de mensagens se a origem da mensagem estiver correta. Nesta página está disponível a implementação do programa e logs de execução do mesmo.</p>
+
+<center>
+<img src="tabelacis.jpg" alt="Simply Easy Learning" width="700">
+<p style="font-family:verdana;"> A tabela C(i, s) para 8 processos.<br>O "i" representa o processo e "s" o cluster. <a style="font-family:verdana;" href="http://www.inf.ufpr.br/elias/sisdis/6aulaSisDis.pdf">Fonte</a> 
+</p>
+</center>
+
+<h2 style="font-family:verdana;">Arquivos ##atualizar</h2>
+<p style="font-family:verdana;">Abaixo os arquivos referentes a implementação do trabalho:</p>
+
+<table style="width:50%">
+  <tr>
+    <th>Arquivo</th>
+    <th>Descrição</th> 
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="v1/vcube.c.txt">vcube.c</a></td>
+    <td>Imprementação da versão 1 do VCube no ambiente SMPL em C.</td>
+  </tr>
+    <tr>
+    <td><a style="font-family:verdana;" href="v2/vcube.c.txt">vcube.c</a></td>
+    <td>Imprementação da versão 2 do VCube no ambiente SMPL em C.</td>
+  </tr>
+  <tr>
+    <td><a style="font-family:verdana;" href="http://www.inf.ufpr.br/elias/sisdis/">outros arquivos</a></td>
+    <td>Arquivos utilizados: smpl.c; smpl.h; rand.c; makefile e cisj.c</td>
+  </tr>
+
+</table>
+<br>
+
+<h2 style="font-family:verdana;">Compilalação e execução: ##atualizar</h2>
+<p style="font-family:verdana;">Como anteriormente citado, o algoritmo VCube necessita dos valores valores da tabela C(i,s). Para obter esses valores, eu utilizei o programa <a style="font-family:verdana;" href="http://www.inf.ufpr.br/elias/sisdis/cisj.c.txt">cisj.c</a> compilado. O programa utiliza a funcão <a href="https://man7.org/linux/man-pages/man3/popen.3.html"><b>popen</b></a>, que abre um <i>pipe stream</i> para um processo que executa o programa cisj e devolve o valor que eu preciso. Portanto, para que o programa <b>vcube.c</b> funcione, é necessário compilar o programa <b>cisj.c</b> da seguinte forma:</p>
+
+<table style="width:50%">
+  <tr>
+    <td><b>$</b> gcc cisj.c -o cisj</td>
+  </tr>
+</table>
+<br>
+<p style="font-family:verdana;">Depois da compilação acima, o programa pode ser compilado através do comando makefile:</p>
+<table style="width:50%">
+  <tr>
+    <td><b>$</b> makefile</td>
+  </tr>
+</table>
+
+<p style="font-family:verdana;">Para modificar o intervalo de testes, deve-se modificar a constante <b>TEST_INTERVAL</b>. Da mesma forma, para alterar o tempo de execução máximo do programa, deve-se modificar a constante <b>MAX_TIME</b>. As falhas e recuperações devem ser feitas manualmente no programa antes do laço principal do programa. Se modificações forem feitas, o programa deve ser compilado novamente. Para executar o programa, você deve colocar o nome e em seguida a quantidade de processos:</p>
+<table style="width:50%">
+  <tr>
+    <td><b>$</b> ./vcube <"número de processos"></td>
+  </tr>
+</table>
+
+
+
+<h2 style="font-family:verdana;">Relatório</h2>
+<h3 style="font-family:verdana;">Definições</h3>
+<p style="font-family:verdana;">O programa possui definições de constantes para valores que representa o TESTE, RECUPERAÇÃO e FALHA dos processos. Essas definições são utilizadas para dar mais legibilidade na simulação. Outras definições são o tempo máximo de execução do programa e o intervalo de testes. Em todos os logs o intervalo de testes utilizado foi 30.0 unidades de tempo.<br>O tipo processo criado para essa simulação contém: id, que é o identificador da facility do SMPL; state, que é o vetor de estados dos demais processos e s, que representa o cluster atual que o processo está testando.</p>
+
+<h3 style="font-family:verdana;">Funções</h3>
+<p style="font-family:verdana;">Duas funções foram criadas para auxiliar a implementação das duas versões do vcube, são elas:<br><b>call_cisj:</b> Como explicado acima, essa função chama o programa cisj e retorna o valor o j-ésimo valor da tabela c(i,s) para ser utilizado nos teste.<br>
+<b>pow_int:</b> Implementação simples da potenciação apenas com números inteiros. A função pow() da biblioteca math.c trabalha com double, então preferi criar a minha para simplificar.</p>
+
+<h3 style="font-family:verdana;">Diagnóstico</h3>
+<p style="font-family:verdana;">Os programas funciona basicamente como se tivesse dois modos: modo diagnóstico em andamento e modo diagnóstico desabilitado. No início de cada programa o modo diagnostico está sempre desabilitado. O modo diagnóstico entra em andamento sempre que há uma requisição de FALHA ou RECUPERAÇÃO, através de uma variávlç booleana. Os testes efetuados e rodadas que se passaram no modo diagnóstico são salvas em contadores. Também é salvo o processo de que se trata o diagnóstico. Apenas um diagnóstico pode acontecer por vez. O primeiro processo que "descobrir" que o processo mudou, vai ter o valor state do processo em diagnóstico salvo. Quando todos os processos (exceto processos falhos e o processo que se trata o diagnóstico) tiverem o mesmo valor nos seus vetores state, o evento foi diagnosticado e uma mensagem será impressa na tela.</p>
+
+<h3 style="font-family:verdana;">Versão 1 do VCUBE + Modificação</h3>
+<p style="font-family:verdana;">Na versão 1 do VCUBE, primeiro é calculado o <i>s máximo</i> que representa o valor máximo que o s de cada processo vai ir. Cada rodada consiste em um cluster, este é incrementado ao começo de cada rodada. Durante a rodada, o programa chama a função c(i,s) que devolve o próximo que deve ser testado. Se o testado for correto, a iteração quebra e o proximo processo vai testar. Caso o processo esteja falho, ele vai testar o próximo valor que a função c(i,s) retornar. Se todos do cluster estiverem falhos, é o fim da rodada para este processo. Ao encontrar um processo correto, o processo copia os valores do vetor state do testado que não testou e estão no cluster atual.</p>
+<h4 style="font-family:verdana;">Modificação</h3>
+<p style="font-family:verdana;">Para a implementação desse trabalho, foi solicitado pelo professor duas mudanças no algoritmo:</p>
+ <ul>
+  <li>Agora, os processos testam todos os logN clusters em todos os intervalos de teste.</li>
+  <li>Ao testar um processo sem falha o testador obtém todas as "novidades" do testado (não apenas do cluster do testado)</li>
+</ul> 
+<p style="font-family:verdana;">Essas mudanças foram feitas para que a latência que um evento leva para ser diagnosticado quando acontece um evento diminua.</p>
+
+<br>
+
+<h2 style="font-family:verdana;">Logs</h2>
+
+<table style="width:50%">
+  <tr>
+    <th>Descrição</th>
+    <th>Versão 1</th>
+    <th>Versão 2</th> 
+  </tr>
+  <tr>
+     <td>Tempo: 97.0<br>Processos: 8<br>Eventos: Não há falhas</td>
+      <td><a style="font-family:verdana;" href="v1/log1.txt">log1.txt</a></td>
+      <td><a style="font-family:verdana;" href="v2/log1.txt">log1.txt</a></td>
+  </tr>
+  <tr>
+    <td>Tempo: 213.0<br>Processos: 4<br>Eventos: Processo 1 falha no tempo 91.0</td>
+      <td><a style="font-family:verdana;" href="v1/log2.txt">log2.txt</a></td>
+      <td><a style="font-family:verdana;" href="v2/log2.txt">log2.txt</a></td>
+  </tr>
+   <tr>
+   <td>Tempo: 480.0<br>Processos: 4<br>Eventos: Processo 3 falha no tempo 92.0; Processo 1 falha no tempo 153.0; Processo 1 recupera no tempo 271.0; Processo 3 recupera no tempo 392.0</td>
+      <td><a style="font-family:verdana;" href="v1/log3.txt">log3.txt</a></td>
+      <td><a style="font-family:verdana;" href="v2/log3.txt">log3.txt</a></td>
+  </tr>
+  <tr>
+   <td>Tempo: 285.0<br>Processos: 16<br>Eventos: Processo 13 falha no tempo 135.0</td>
+      <td><a style="font-family:verdana;" href="v1/log4.txt">log4.txt</a></td>
+      <td><a style="font-family:verdana;" href="v2/log4.txt">log4.txt</a></td>
+  </tr>
+   <tr>
+   <td>Tempo: 663.0<br>Processos: 8<br>Eventos: Processo 4 falha no tempo 126.0; Processo 5 falha no tempo 301.0; Processo 6 falha no tempo 393.0; Processo 7 falha no tempo 543.0</td>
+      <td><a style="font-family:verdana;" href="v1/log5.txt">log5.txt</a></td>
+      <td><a style="font-family:verdana;" href="v2/log5.txt">log5.txt</a></td>
+  </tr>
+   <tr>
+   <td>Tempo: 249.0<br>Processos: 10<br>Quantidade de processos não é potência de 2<br>Eventos: Não há falhas</td>
+      <td><center> --- </center></td>
+      <td><a style="font-family:verdana;" href="v2/log6.txt">log6.txt</a></td>
+  </tr>
+   <tr>
+   <td>Tempo: XX.0<br>Processos: 6<br>Quantidade de processos não é potência de 2<br>Eventos: Processo 5 falha no tempo 126.0</td>
+      <td><center> --- </center></td>
+      <td><a style="font-family:verdana;" href="v2/log7.txt">log7.txt</a></td>
+  </tr>
+</table>
+<br>
+
+<center>
+<p style="font-family:verdana;"><b>Última modificação:</b> 02/02/2021</p>
+
+</center>
+</body>
+</html>
