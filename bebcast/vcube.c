@@ -75,6 +75,24 @@ int pow_int(int base, int exp)
     return resultado;
 }
 
+//a qual cluster de j o processo i pertence?
+int cluster(int i, int j)
+{
+	int k;
+	int s = 0;
+
+	while(1) {
+		int smax = pow_int(2,s);
+		s++;
+		for (k = 1; k <= smax; k++) {
+			if (call_cisj(j,s,k) == i) {
+				return s;
+			}
+		}
+	}
+
+}
+
 // ### Início Função Main ###
 int main(int argc, char const *argv[])
 {
@@ -159,6 +177,8 @@ int main(int argc, char const *argv[])
 		}
 	}
 	printf("****************************************************\n");
+
+	printf("CLUSTER %d\n", cluster(3,8));
 
 
 /*	for (i=0;i<N;i++) {
