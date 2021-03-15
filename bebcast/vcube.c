@@ -90,7 +90,11 @@ int cluster(int i, int j)
 			}
 		}
 	}
+}
 
+int ff_neighbour(int i, int s)
+{
+	
 }
 
 // ### Início Função Main ###
