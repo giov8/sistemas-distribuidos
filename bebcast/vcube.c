@@ -92,9 +92,17 @@ int cluster(int i, int j)
 	}
 }
 
-int ff_neighbour(int i, int s)
+int ff_neighbour(int i, int s, int *state)
 {
-	
+	int vizinho;
+
+	for (int j = 1; j <= pow_int(2,s-1); j++) {
+		vizinho = call_cisj(i,s,j);
+		if (!(state[vizinho]%2)) { //se o vizinho não estiver falho
+			return vizinho;
+		}
+	}
+	return (-1);
 }
 
 // ### Início Função Main ###
@@ -183,6 +191,38 @@ int main(int argc, char const *argv[])
 	printf("****************************************************\n");
 
 	printf("CLUSTER %d\n", cluster(3,8));
+
+	int *estaty = malloc(sizeof(int)*N);
+	estaty[0] = 0;
+	estaty[1] = 0;
+	estaty[2] = 1;
+	estaty[3] = 2;
+
+	estaty[4] = 1;
+	estaty[5] = 3;
+	estaty[6] = 0;
+	estaty[7] = 4;
+
+	printf("FF NBOUR : %d\n", ff_neighbour(0,1,estaty));
+	printf("FF NBOUR : %d\n", ff_neighbour(0,2,estaty));
+	printf("FF NBOUR : %d\n\n", ff_neighbour(0,3,estaty));
+
+	printf("FF NBOUR : %d\n", ff_neighbour(1,1,estaty));
+	printf("FF NBOUR : %d\n", ff_neighbour(1,2,estaty));
+	printf("FF NBOUR : %d\n\n", ff_neighbour(1,3,estaty));
+
+	printf("FF NBOUR : %d\n", ff_neighbour(3,1,estaty));
+	printf("FF NBOUR : %d\n", ff_neighbour(3,2,estaty));
+	printf("FF NBOUR : %d\n\n", ff_neighbour(3,3,estaty));
+
+	printf("FF NBOUR : %d\n", ff_neighbour(6,1,estaty));
+	printf("FF NBOUR : %d\n", ff_neighbour(6,2,estaty));
+	printf("FF NBOUR : %d\n\n", ff_neighbour(6,3,estaty));
+
+	printf("FF NBOUR : %d\n", ff_neighbour(7,1,estaty));
+	printf("FF NBOUR : %d\n", ff_neighbour(7,2,estaty));
+	printf("FF NBOUR : %d\n\n", ff_neighbour(7,3,estaty));
+
 
 
 /*	for (i=0;i<N;i++) {
