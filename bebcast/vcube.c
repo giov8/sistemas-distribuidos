@@ -156,7 +156,7 @@ int main(int argc, char const *argv[])
 		processo[i].state = (int*) malloc(sizeof(int)*N);
 		processo[i].state[i] = 0; 	// define o proprio status do processo no vetor como Online (zero)
 		for (j=1; j<N; j++) {
-			processo[i].state[(i+j)%N] = UNKNOWN; // define os demais processos com o valor -1 (unknown)
+			processo[i].state[(i+j)%N] = UNKNOWN; // define os demais processos como corretos
 		}
 	}
 
@@ -169,6 +169,7 @@ int main(int argc, char const *argv[])
 		for (i=5; i < argc; i++) {
 			printf("PROCESSO: %d FALHARÁ NO TEMPO %4.1f\n", atoi(argv[i]), atof(argv[i+1]));
 			schedule(FAULT, atof(argv[i+1]), atoi(argv[i]));	// programa uma falha do processo da linha de comando, no tempo especificado
+			//if ()
 			i++;
 		}
 	}
@@ -188,46 +189,6 @@ int main(int argc, char const *argv[])
 			schedule(FAULT, tempoRand, processoRand);
 		}
 	}
-	printf("****************************************************\n");
-
-	printf("CLUSTER %d\n", cluster(3,8));
-
-	int *estaty = malloc(sizeof(int)*N);
-	estaty[0] = 0;
-	estaty[1] = 0;
-	estaty[2] = 1;
-	estaty[3] = 2;
-
-	estaty[4] = 1;
-	estaty[5] = 3;
-	estaty[6] = 0;
-	estaty[7] = 4;
-
-	printf("FF NBOUR : %d\n", ff_neighbour(0,1,estaty));
-	printf("FF NBOUR : %d\n", ff_neighbour(0,2,estaty));
-	printf("FF NBOUR : %d\n\n", ff_neighbour(0,3,estaty));
-
-	printf("FF NBOUR : %d\n", ff_neighbour(1,1,estaty));
-	printf("FF NBOUR : %d\n", ff_neighbour(1,2,estaty));
-	printf("FF NBOUR : %d\n\n", ff_neighbour(1,3,estaty));
-
-	printf("FF NBOUR : %d\n", ff_neighbour(3,1,estaty));
-	printf("FF NBOUR : %d\n", ff_neighbour(3,2,estaty));
-	printf("FF NBOUR : %d\n\n", ff_neighbour(3,3,estaty));
-
-	printf("FF NBOUR : %d\n", ff_neighbour(6,1,estaty));
-	printf("FF NBOUR : %d\n", ff_neighbour(6,2,estaty));
-	printf("FF NBOUR : %d\n\n", ff_neighbour(6,3,estaty));
-
-	printf("FF NBOUR : %d\n", ff_neighbour(7,1,estaty));
-	printf("FF NBOUR : %d\n", ff_neighbour(7,2,estaty));
-	printf("FF NBOUR : %d\n\n", ff_neighbour(7,3,estaty));
-
-
-
-/*	for (i=0;i<N;i++) {
-		schedule(TEST, TEST_INTERVAL+i, i);
-	}
 
 	// Cronograma dos eventos (escalonamento)
 	//schedule(FAULT, 130.0, 5); 			//o processo 5 falha no tempo 130.00
@@ -236,6 +197,9 @@ int main(int argc, char const *argv[])
 	printf("****************************************************\n\n");
 	printf("Início da execução...\n");
 
+	for (i=0;i<N;i++) {
+	schedule(TEST, TEST_INTERVAL+i, i);
+	}
 
 	int count_rodada = 1;
 	int tamanho_cluster = 0;
@@ -291,69 +255,63 @@ int main(int argc, char const *argv[])
 				if ((status(processo[token].id)) != 0) break;	//se o processo está falho, não testará
 				
 				// O processo não está falho, então testará outro
+				//processo[token].s = (processo[token].s % max_s) + 1;
 
-				processo[token].s = (processo[token].s % max_s) + 1;
- 				tamanho_cluster = pow_int(2, processo[token].s);
-				printf("Processo: %d  s: %d\n",token, processo[token].s);
-
-				for (i = 1; i <= tamanho_cluster; i++)
+				for (int s=1; s <= max_s; s++)
 				{
-					//i_next corresponde ao proximo index que será testado
-					i_next = call_cisj(token, processo[token].s, i);
+					printf("Processo: %d  s: %d\n",token, s);
+ 					tamanho_cluster = pow_int(2, s-1);
+					
+					for (i = 1; i <= tamanho_cluster; i++)
+					{
+						//i_next corresponde ao proximo index que será testado
+						i_next = call_cisj(token, s, i);
 
-					// serve para que o número de processos não precise ser na base 2
-					if (i_next >= N) break;
+						if (status(processo[i_next].id) != 0) {
+							printf("Testado: %d    Status: FALHO    Tempo: %4.1f\n", i_next, time());
+							// caso o estado do processo testado esteja diferente do vetor state, corrige
+							if (!processo[token].state[i_next]%2)  //se o valor no vetor state for par, incrementa o valor
+								processo[token].state[i_next]++;
 
-					if (status(processo[i_next].id) != 0) {
-						printf("Testado: %d    Status: FALHO    Tempo: %4.1f\n", i_next, time());
-						// caso o estado do processo testado esteja diferente do vetor state, corrige
-						if (!processo[token].state[i_next]%2)  //se o valor no vetor state for par, incrementa o valor
-							processo[token].state[i_next]++;
+							// vai cair nesse caso se for um processo recuperado
+							if (processo[token].state[i_next] == UNKNOWN)
+								processo[token].state[i_next] = 1;
 
-						// vai cair nesse caso se for um processo recuperado
-						if (processo[token].state[i_next] == UNKNOWN)
-							processo[token].state[i_next] = 1;
-
-						//verifica se está em processo de diagnostico
-						if (!evento_diagnosticado) {
-							evento_testes++;
-							//se for o primeiro a encontrar o erro
-							if ((i_next == evento_atual)&&(evento_valor < 0))
-								evento_valor = processo[token].state[i_next]; 
-						}
-					}
-
-					else {
-						printf("Testado: %d    Status: CORRETO    Tempo: %4.1f\n", i_next, time());
-						// caso o estado do processo testado esteja diferente do vetor state, corrige
-						if (processo[token].state[i_next]%2)  //se o valor no vetor state for ímpar, incrementa o valor
-							processo[token].state[i_next]++;
-
-						if (!evento_diagnosticado) {
-							evento_testes++;
-							//se for o primeiro a encontrar o erro
-							if ((i_next == evento_atual)&&(evento_valor < 0))
-								evento_valor = processo[token].state[i_next]; 
+							//verifica se está em processo de diagnostico
+							if (!evento_diagnosticado) {
+								evento_testes++;
+								//se for o primeiro a encontrar o erro
+								if ((i_next == evento_atual)&&(evento_valor < 0))
+									evento_valor = processo[token].state[i_next]; 
+							}
 						}
 
-						// vai copiar o vetor state[N] dos que ele não testou **apenas no cluster**
-						int i_correto = i_next; // salva o que foi testado correto para copiar
+						else {
+							printf("Testado: %d    Status: CORRETO    Tempo: %4.1f\n", i_next, time());
+							// caso o estado do processo testado esteja diferente do vetor state, corrige
+							if (processo[token].state[i_next]%2)  //se o valor no vetor state for ímpar, incrementa o valor
+								processo[token].state[i_next]++;
 
-						for (i = i+1; i < tamanho_cluster; i++) {
-							i_next = call_cisj(token, processo[token].s, i);
-
-							// essa linha serve para que o número de processos não precise ser na base 2:
-							if (i_next > N) break;
-
-							if(processo[token].state[i_next] < processo[i_correto].state[i_next]) {
-								processo[token].state[i_next] = processo[i_correto].state[i_next];
-								//printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, i_next, i_correto);
+							if (!evento_diagnosticado) {
+								evento_testes++;
+								//se for o primeiro a encontrar o erro
+								if ((i_next == evento_atual)&&(evento_valor < 0))
+									evento_valor = processo[token].state[i_next]; 
 							}
 
-						}
-						break;
-					}
+							// vai copiar todas as novidades do vetor state[N]
+							for (i = 0; i < N; i++) {
 
+								if(processo[token].state[i] < processo[i_next].state[i]) {
+									processo[token].state[i] = processo[i_next].state[i];
+									//printf("-- O processo %d obteve informação do processo %d através do processo %d\n", token, i_next, i_correto);
+								}
+
+							}
+							break;
+						}
+
+					}
 				}
 
 				//imprime vetor state
@@ -374,7 +332,6 @@ int main(int argc, char const *argv[])
 				}
 
 				//Limpa a memória do vetor do processo que falhou/crashou
-				processo[token].s = 0;
 				processo[token].state[token] = 0; 	// define o proprio status do processo no vetor como Online (zero)
 				for (j=1; j<N; j++) {
 					processo[token].state[(token+j)%N] = UNKNOWN; // define os demais processos com o valor -1 (unknown)
@@ -403,7 +360,7 @@ int main(int argc, char const *argv[])
 
 				break;
 		}
-	}*/
+	}
 	printf("\nFim da execução.\n");
 	return(0);
 }

@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<title>Sistemas Distribuídos, Prof. Elias</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {
+background-color: #6CBB3C;
+}
+-->
+</style></head>
+
+<body><div align="center">
+<table style="font-family:Verdana; font-size:12pt" width="80%" cellpadding="4" border="0" bgcolor="white">
+
+<tbody><tr><td>
+<center>
+<br><br>
+<img src="Sistemas%20Distribu%C3%ADdos,%20Prof.%20Elias_files/sisdis.jpg">
+
+<p>
+<em>Disciplina do Mestrado/Doutorado em Informática e Optativa do Bacharelado em Ciência da
+Computação</em>
+
+</p><p>
+<font size="3" face="futura" color="green">
+<a href="http://www.inf.ufpr.br/elias">Prof. Elias P. Duarte Jr.</a> 
+&nbsp;
+&nbsp;
+<a href="http://www.inf.ufpr.br/">Departamento de Informática</a>
+&nbsp;
+&nbsp;
+<a href="http://www.ufpr.br/">UFPR</a> 
+</font>
+	
+<br>
+
+</p><table width="100%"><tbody><tr><td bgcolor="green"><font color="white"><b>&nbsp; Disciplina
+CI721 (Mestrado/Doutorado) e CI1088 (Optativa Bacharelado em Ciência da Computação)
+</b></font></td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td bgcolor="lightgreen"><font color="green"><b>&nbsp;
+Período Especial ERE2 On-Line</b></font></td></tr></tbody></table>
+</center>
+
+
+<font color="RED">
+
+</font><p><font color="RED"> Atenção pessoal: estão abaixo todas as 
+aulas até a 16 inclusive, os videos estão também liberados, a aula em 
+que "refatoramos" o 
+algoritmo do TP3 também foi atualizada. As notas do TP2 estão 
+disponíveis também, se quiser verificar a correção com o professor é só 
+mandar um email e marcamos! 
+
+</font>
+
+<font color="DARKRED">
+
+</font></p><p><font color="DARKRED"> Atenção pessoal: o artigo e a apresentação do Prof. Luiz A. Rodrigues estão acrescentados abaixo, bem como a aula
+de 2/março/21 em que "refatoramos" o algoritmo de Difusão de Melhor Esforço Baseada no VCube que deve ser implementada no
+3o e último TP. 
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: TP3 divulgado! Hoje (2/março/21) vamos "refatorar"
+o algoritmo de Difusão de Melhor Esforço sobre o VCube que vcs vão
+implementar.
+
+</font></p><p><font color="DARKRED">
+Dia 25 de fevereiro de 2021: vamos ter aula do algoritmo de Best-Effort 
+Broadcast sobre o VCube ministrada pelo autor
+do algoritmo, Prof. Luiz Antonio Rodrigues (UNIOESTE) - que honra! Vamos
+ tentar o BBB do DInf, se estiver lento mudamos para o Meet: 
+https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: vamos tentar aula de 23/fev/21 no DInf, se estiver 
+lento mudamos para o Meet: https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+
+</font></p><p><font color="DARKRED"> Pessoal: aula de 18/fevereiro na sala https://meet.google.com/ity-utep-avp
+
+</font></p><p><font color="DARKRED"> Pessoal: aula de 18/fevereiro/21 confirmadíssima! Vamos estudar um algoritmo de DMutex baseado em quorums, aguardo vcs!
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: nossa sala agora é permanente: https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+
+</font></p><p><font color="DARKRED"> Pessoal: aula de 11/fevereiro na sala https://meet.google.com/ity-utep-avp
+
+</font></p><p><font color="DARKRED"> Pessoal: Aula 9 atualizada e Aula 10 incluída (10 fevereiro 21)
+
+</font></p><p><font color="DARKRED"> Caros alunos: tive uma emergência 
+odontológica e meu dentista só vai conseguir me atender no final da 
+tarde hoje. Peço desculpas a todos, vamos pular hoje, próxima aula 
+quinta ou divulgo vídeo OK? 
+
+</font></p><p><font color="DARKRED"> Pessoal, quinta dia 11/2/21 a aula vai ter que ser às 19:30hs,
+se tivermos difculdade on line será gravada.
+</font></p><p><font color="DARKRED"> A 1a aula de DMutex bem como os slides pdf estão disponibilizados abaixo.
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: nesta quinta-feira vamos continuar a verificação das 
+correções, com isso o TP2 só vai ser corrigido a partir de terça da 
+semana que vem.
+
+</font></p><p><font color="DARKRED">
+Alunos que já viram as correções na terça estão liberados na quinta (28/jan/21)
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: notas divulgadas, todos poderão ver correções com o professor ainda esta semana
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: aulas retornam dia 19/janeiro/2021, terça-feira.
+
+</font></p><p><font color="DARKRED">
+Pessoal: em 14 de dezembro de 2020 atualizei os pdfs Aula 6 e Aula 7 abaixo!
+
+</font></p><p><font color="DARKRED">
+Pessoal, nossa aula de 10/11/2020 vai ser na sala seguinte, por favor entrem com os nomes certinhos:<br>
+https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+
+</font></p><p><font color="DARKRED">
+A aula de 05/11/2020 vai ser uma atividade: palestra internacional sobre sistemas distribuídos da conferência <a href="http://aiccsa.net/AICCSA2020">AICCSA'2020</a>. O link para a palestra às 9:30 da manhã é:
+
+<a href="https://arizona.zoom.us/j/87913675743">https://arizona.zoom.us/j/87913675743</a>
+
+</font></p><p><font color="DARKRED">
+Pessoal, nossa aula de 03/11/2020 vai ser na sala seguinte, por favor entrem com os nomes certinhos:<br>
+https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: as aulas começam efetivamente amanhã, dia 
+3/novembro/2020. Antes das 19:30hs (horário que começa a aula) eu vou 
+colocar aqui nesta página o link da sala onde nos encontraremos. Abraços
+ a todos!
+
+</font></p><p><font color="DARKRED">
+Atenção pessoal: em brevíssimo vou colocar aqui mais informações sobre nossa
+disciplina remota, que vai começar dia 3/novembro/2020 às 19:30. Estou 
+empolgadíssimo e aguardo vocês para esta aventura no mundo dos Sistemas Distribuídos!
+
+</font></p><p><font color="DARKRED">
+Todos os AVISOS serão postados aqui.
+</font>
+<br>
+
+<font color="BLUE">
+
+Atenção pessoal, seguem as aulas em pdf (lembrando que cada unidade não 
+corresponde exatamente a uma aula, em alguns casos ficamos mais de um 
+dia na mesma unidade):
+
+</font>
+
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/1aulaSisDis.pdf">Aula 1</a> &nbsp; &nbsp;  
+<a href="https://www.inf.ufpr.br/elias/sisdis/KeynoteAICCSANov2020.pdf">Atividade 1: Keynote AICCSA'2020</a>
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/2aulaSisDis.pdf">Aula 2</a> &nbsp; &nbsp;
+<a href="https://www.inf.ufpr.br/elias/sisdis/KeynoteAICCSANov2020.pdf">Atividade 1: Keynote AICCSA'2020</a>
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/2aulaSisDis.pdf">Aula 2</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/3aulaSisDis.pdf">Aula 3</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/4aulaSisDis.pdf">Aula 4</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/5aulaSisDis.pdf">Aula 5</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/6aulaSisDis.pdf">Aula 6</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/7aulaSisDis.pdf">Aula 7</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/8aulaSisDisRelogiosLogicos.pdf">Aula 8</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/Resolu%C3%A7%C3%A3oExercicio1RelogiosLogicos.pdf">Resolução do Exercício 1 de Relógios Lógicos</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/9aulaSisDisDMutex.pdf">Aula 9: pdf</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/Aula1ExclusaoMutuaDistribuida4fev21Elias.mp4">Aula 9: video</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/10aulaSisRicartAgrawalaQuorums.pdf">Aula 10</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/11aulaSisMaekawaQuorums.pdf">Aula 11</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/12aulaSisDisBroadcasts.pdf">Aula 12</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/13aulaSisDisRADTP3.pdf">Aula 13</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/ArvoresAutonomicasVCube.pdf">Artigo Broadcast VCube (SBRC'2014)</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/ApresLuizRodriguesArvoresAutonomicas.pdf">Apresentação Prof. Luiz A. Rodrigues sobre Broadcast VCube</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/14aulaSisDisConsFailureDetectors.pdf">Aula 14</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/15aulaSisDis.pdf">Aula 15</a> &nbsp; &nbsp;
+&nbsp; &nbsp;  <a href="https://www.inf.ufpr.br/elias/sisdis/16aulaSisDisGossip.pdf">Aula 16</a> &nbsp; &nbsp;
+
+</p><p>
+Atenção pessoal, realizando um sonho de mais de 30 anos, começo a disponibilizar uma apostila de
+Sistemas Distribuídos. Por enquanto, apenas o <a href="https://www.inf.ufpr.br/elias/sisdis/1CapituloSistemasDistribuidos.pdf">Capítulo 1: Introdução aos
+Sistemas Distribuídos</a>
+
+</p><p>
+Horário: Terças &amp; Quintas, 19:30 -&gt; 21:00hs Sala: https://bbb.c3sl.ufpr.br/b/eli-vho-ods-73z
+</p>
+
+<p>
+<font color="brown">
+</font>
+
+<font color="darkred">
+</font></p><p><font color="darkred">
+</font>
+
+</p><p>
+Prova 1: 17 de dezembro de 2020 (quinta-feira, na hora da aula, on-line com o professor)
+<a href="https://www.inf.ufpr.br/elias/sisdis/SisDisERE2.html">Resultado</a>
+<!--a href="pv1-sisdis-19-2.html" Gabarito</a-->
+<br>
+Os alunos estão convidados a ver as correções da prova e trabalho com o professor.
+</p>
+<p></p>
+
+<p>
+Prova 2: de fevereiro de 2021 (quinta-feira, na hora da aula, on-line)
+<!--Os alunos estão convidados para ver as correções, segunda-feira 24/junho/2019, das 14hs às 15:30hs,
+no gabinete do professor.-->
+</p>
+
+<p>
+Prova Final: de fevereiro de 2021 (terça-feira, na hora da aula, on-line)
+</p>
+
+<p>
+Avaliação: 2 provas de 20 pontos cada; trabalho prático em fases valendo no total 60 pontos. 
+
+<br>
+
+</p><p>
+<!-- em O atendimento a dúvidas é feito ao término da aula, o professor
+conta com a compreensão dos alunos para evitarem consultas por
+e-mail. Sempre há tempo depois de cada aula! Se detectarmos então
+a necessidade, podemos também agendar um horário para atendê-lo na
+minha sala.</em-->
+<br>
+
+</p><table width="100%"><tbody><tr><td bgcolor="lightgreen"><font color="green"><b>&nbsp;
+O Trabalho Prático
+</b></font></td></tr></tbody></table>
+
+<p>
+<b>TRABALHO PRÁTICO 0</b>
+
+</p><p>
+Tarefas para aprender a usar nossa ferramenta de simulação, o SMPL.
+
+</p><p>
+Tarefa 0: digitar, compilar e executar o programa exemplo, tempo.c
+
+</p><p>
+Tarefa 1: Fazer cada um dos processos testar o seguinte no anel.  
+Implemente o teste com a função           status() do SMPL e imprimir 
+(printf) o resultado de cada teste executado.  Por exemplo: “O processo i
+ testou o processo j correto no tempo tal.”
+
+</p><p>
+Tarefa 2: Cada processo correto executa testes até achar outro processo 
+correto. Lembre-se de tratar o caso em que todos os demais processos 
+estão falhos. Imprimir os testes e resultados. 
+
+</p><p>
+Tarefa 3: Cada processo mantém localmente o vetor State[N]. Inicializa o
+ State[N] com -1 (indicando estado “unknown”) para todos os demais 
+processos e 0 para o próprio processo.                Nesta tarefa ao 
+executar um teste, o processo atualiza a entrada correspondente no vetor
+ State[N]. Em cada intervalo de testes, mostre o vetor State[N].
+
+</p><p>
+Tarefa 4: Quando um processo correto testa outro processo correto obtém 
+as informações de diagnóstico do processo testado sobre todos os 
+processos do sistema exceto aqueles que testou nesta rodada, além do 
+próprio testador.
+
+</p><p>
+Na página Web do Trabalho Prático 1, por favor incluam links para as 5 
+Tarefas
+indicadas na aula de laboratório (tempo.c mais 4 seguintes). Para cada 
+uma das Tarefas inclua um pequeno log, mostrando que a Tarefa executou 
+corretamente.
+
+</p><p>
+<b>TRABALHO PRÁTICO 1</b>
+
+</p><p>
+<b>Especificação:</b> Implemente o algoritmo VRing no ambiente
+de simulação SMPL, e mostre resultados para diversos valores de N e
+diversos eventos - um evento em um processo de cada vez, um evento só ocorre depois do
+evento anterior ser diagnosticado.  Para cada evento mostre claramente o
+número de testes executados e a latência para completar o diagnóstico
+do evento. Cada nodo mantém o vetor STATE[0..N-1] de contadores de
+eventos, inicializado em -1 (estado “unknown”).  Assume-se que os processos
+são inicializados sem-falha, a entrada correspondente ao próprio processo no vetor
+STATE[] do testador é setada para zero.  Ao descobrir um novo evento
+em um nodo testado, o testador incrementa a entrada correspondente no
+vetor STATE[].  
+
+</p><p>
+Para a transferência de informações de diagnóstico lembre-se da 
+estratégia do VRing: quando um processo sem-falha testa outro processo 
+sem-falha obtém informações sobre os estados de todos os processos que 
+não testou no intervalo de testes corrente. É importante comparar as 
+entradas correspondentes dos vetores STATE (testador e testado) para 
+saber se o testado tem alguma novidade. Se o valor da entrada for maior 
+no vetor STATE do processo testado, então copia a informação. 
+
+</p><p>
+<bf>Atenção: Data para disponibilizar o trabalho: 15 de dezembro de 2020 (terça-feira)
+
+</bf></p><p>
+Os alunos devem informar por e-mail a URL do trabalho, usando o subject
+"TP1 SISDIS 2020-ERE2"
+
+</p><p>
+<b>TRABALHO PRÁTICO 2</b>
+
+</p><p>
+Especificação: implemente as duas versões do VCube usando SMPL. 
+Lembre-se: na versão 1, em cada intervalo de testes, cada processo 
+correto executa testes em 1 cluster sequencialmente até encontrar um 
+processo correto, ou testar todos os processos falhos. Tendo testado um 
+processo correto, obtém informações sobre os processos restantes do 
+cluster (aqueles que não testou) a partir do processo correto testado. 
+Na versão 2, são definidos de antemão com o uso da função C(i,s) 
+executada por e para todos os processos quem são os testadores de quais 
+processos. Esta estratégia garante NlogN testes a cada logN rodadas de 
+testes. Na versão 2, ao testar um processo correto, o testador obtém 
+informações sobre qualquer “novidade” que o processo testado tenha. 
+Sugestão para implementar na simulação (em um sistema real não seria boa
+ ideia): simplesmente compare os vetores State do testador com o testado
+ procurando entradas com maior valor.
+
+</p><p>
+Vamos manter a mesma definição de rodada para as duas versões: todos os 
+processos corretos executaram testes em 1 de seus clusters.
+
+</p><p>
+Mostre resultados para diversos valores de N e diversos eventos - um 
+evento em um processo de cada vez, um evento só ocorre depois do evento 
+anterior ser diagnosticado. Para cada evento mostre claramente o número 
+de testes executados e a latência para completar o diagnóstico do 
+evento. Cada nodo mantém o vetor STATE[0..N-1] de contadores de eventos,
+ inicializado em -1 (estado “unknown”). Assume-se que os processos são 
+inicializados sem-falha, a entrada correspondente ao próprio processo no
+ vetor STATE[] do testador é setada para zero. Ao descobrir um novo 
+evento em um processo testado, o testador incrementa a entrada 
+correspondente no vetor STATE[].
+
+</p><p>
+Atenção: Data para disponibilizar o trabalho: 26 de janeiro de 2021 
+(terça-feira) (está sendo especificado 15 de dezembro de 2020)
+
+</p><p>
+Os alunos devem informar por e-mail a URL do trabalho, usando o subject "TP2 SISDIS 2020-ERE2"
+
+</p><p>
+<b>TRABALHO PRÁTICO 3</b>
+
+</p><p>
+Especificação: implemente o algoritmo de Best-Effort Broadcast sobre o VCube. O programa deve receber como entradas: o
+processo fonte do broadcast, o número de nodos do sistema e uma lista de nodos para falhar durante a execução. Deve ser
+possível tanto definir processos que estarão falhos durante toda a execução, como processos que falham em momentos específicos.
+
+</p><p>
+Além disso, deve ser possível fazer uma execução com escalonamento de falhas definidas aleatoriamente. 
+Em outras palavras: quando vc executa o algoritmo
+usando esta abordagem, processos escolhidos aleatoriamente vão falhar entre o início e o fim do broadcast. 
+
+</p><p>
+Atenção pessoal: fazer o VCube com processos testando todos os logN 
+clusters em todos os intervalos de teste. Além disso, ao testar um 
+processo sem falha o testador obtém todas as "novidades" do testado (não
+ apenas do cluster do testado). A estratégia de testes propriamente dita
+ pode ser tanto to VCube original como do VCube versão 2, vcs escolhem.
+
+</p><p> 
+Atenção pessoal: por favor apresentem logs para a execução de broadcast nos seguintes cenários, 
+cada cenário deve ser apresentado em um arquivo html separado:
+
+</p><ol>
+
+<li> Mostre todas as mensagens transmitidas broadcasts iniciados pelo processo
+0 (zero) em sistemas com N = 8, 16 e 32 processos, todos corretos (3 cenários sem falhas).
+
+</li><li> Em um sistema com 8 processos, o broadcast é iniciado pelo
+processo 0 e estão falhos 2, 4 e 5. Mostre claramente quais mensagens
+são transmitidas.
+
+</li><li> Em um sistema com 8 processos, o broadcast é iniciado pelo
+processo 7 e estão falhos 3 e 1. Mostre claramente quais mensagens
+são transmitidas.
+
+</li><li> Em um sistema com 16 processos, o broadcast é iniciado pelo
+processo 0 e estão falhos 2, 8, 9 e 12. Mostre claramente quais mensagens
+são transmitidas.
+
+</li><li> Em um sistema com 32 processos, o broadcast é iniciado pelo 
+processo 16 e estão falhos 0, 2, 4 e 8. Mostre claramente quais mensagens são 
+transmitidas.
+
+</li><li> Pense e mostre outros casos de teste!
+
+</li></ol>
+
+<p>
+No relatório, 
+explique cuidadosamente como vc implementou cada função e o algoritmo 
+como um todo. Mostre os logs com cuidado, de forma que
+seja possível ver com clareza o progresso do broadcast, inclusive após a
+ ocorrência de falhas.
+Um caso que deve estar nos logs é o seguinte: um processo aguarda o ACK 
+de outro processo. Em seguida (antes de receber o ACK) o 
+processo que deveria mandar o ACK falha. Agora o processo que aguardava o
+ ACK deve mandar uma nova mensagem para outro processo do 
+cluster do processo que falhou. Deve ser fácil visualizar toda esta 
+situação no seu log!
+
+</p><p>
+Atenção: Data para disponibilizar o trabalho: 18 de março de 2021 (quinta-feira)
+
+</p><p>
+Os alunos devem informar por e-mail a URL do trabalho, usando o subject "TP3 SISDIS 2020-ERE2"
+
+</p><p>
+O trabalho deve ser feito individualmente!
+
+</p><p>
+Deve ser feita uma página Web, que contém:
+
+</p><ol>
+<li>Relatório HTML explicando como o trabalho foi feito (use desenhos,
+palavras, o que você quiser): o objetivo é detalhar as suas decisões
+para implementar seu trabalho.
+</li>
+
+<li>Código fonte dos programas, comentados.
+<font color="red">ATENÇÃO:</font> acrescente
+a todo programa a terminação ".txt" para que possa ser diretamente aberto em um
+browser. Exemplos: cliente.py.txt ou servidor.c.txt
+</li>
+
+<li><em>Log</em> dos testes executados: mostre explicitamente diversos
+casos testados, lembre-se é a partir desta listagem de testes que
+o professor vai medir até que ponto o trabalho está funcionando.
+<br>
+Veja este <a href="https://www.inf.ufpr.br/elias/sisdis/ListaVetExemploLog.c.txt">programa exemplo</a>
+para ilustrar a criação de <a href="https://www.inf.ufpr.br/elias/sisdis/ExemploLog.txt">um bom log</a>.
+</li>
+</ol>
+
+<table width="100%"><tbody><tr><td bgcolor="green"><font color="white"><b>&nbsp; Informações
+sobre a Disciplina Sistemas Distribuídos
+</b></font></td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td bgcolor="lightgreen"><font color="green"><b>&nbsp;
+Pré-Requisitos</b></font></td></tr></tbody></table>
+
+<p>
+Mestrado e Doutorado em Informática: é pré-requisito para a disciplina do Mestrado, Sistemas Distribuídos
+(CI721), o aluno ter domínio de Programação de Computadores com a 
+linguagem C em ambiente Unix (Linux).
+
+</p><p>
+Bacharelado em Ciência da Computação: A disciplina <a href="http://www.inf.ufpr.br/elias/redes">Redes de Computadores II (CI061)</a><a> é Pré-Requisito obrigatório
+para o aluno poder se matricular em Tópicos em Sistemas Distribuídos
+(CI088).
+
+<br>
+<br>
+
+</a></p><table width="100%"><tbody><tr><td bgcolor="lightgreen"><font color="green"><b>&nbsp; Programa
+</b></font></td></tr></tbody></table><a>
+
+<p>
+Esta é uma disciplina com ênfase em algoritmos distribuídos clássicos &amp;
+tolerância a falhas. Os tópicos cobertos em cada semestre <em>incluem</em> os seguintes. </p>
+
+<p>
+No 1o semestre de 2020 os tópicos serão os seguintes:
+
+<quote>
+
+</quote></p><ol>
+
+<p>
+</p><li> Introdução aos Sistemas Distribuídos
+
+<p>
+</p></li><li> Modelos Temporais: Sistemas Síncronos, Assíncronos e Parcialmente Síncronos
+
+<p>
+</p></li><li> Confiança no Funcionamento de Sistemas (<em>Dependability</em>) e Modelos de Falhas 
+
+<p>
+</p></li><li> VRing: Um Algoritmo Distribuído em Anel
+
+<p>
+</p></li><li> VCube: Um Algoritmo Distribuído Hierárquico
+
+<p>
+</p></li><li> Relógios Lógicos e Causalidade
+
+<p>
+</p></li><li> Exclusão Mútua Distribuída
+
+<p>
+</p></li><li> Difusão Confiável, FIFO, Causal e Atômica
+
+<p>
+</p></li><li> Detectores de Falhas
+
+<p>
+</p></li><li> Eleição de Líder
+
+<p>
+</p></li><li> Consenso
+
+<p>
+</p></li><li> Difusão Atômica Baseada em Consenso
+
+</li></ol>
+
+<p>
+Em outros semestres os tópicos já incluiram:
+
+</p><ol>
+
+<p>
+</p><li> O Problema dos Generais Bizantinos
+
+<p>
+</p></li><li> Transações Atômicas Distribuídas
+
+<p>
+</p></li><li> Replicação Distribuída
+
+<p>
+</p></li><li> Comunicação em Grupo (<em>Group Membership</em>) 
+
+<p>
+</p></li><li> Sincronização de Relógios
+
+<p>
+</p></li><li> <em>CheckPointing &amp; Rollback</em>
+
+<p>
+</p></li><li> Diagnóstico em Nível de Sistema
+
+<p>
+</p></li><li> Particionamento &amp; Recuperação de Redes de Topologia Arbitrária
+
+<p>
+</p></li><li> Simulação de Sistemas Distribuídos
+
+<p>
+</p></li><li> Segurança no Contexto de Sistemas Distribuídos
+
+</li></ol>
+
+<br>
+
+<table width="100%"><tbody><tr><td bgcolor="green"><font color="white"><b>VCube</b></font></td></tr></tbody></table>
+
+</a><a href="http://www.inf.ufpr.br/jrb13/tg-parte1-2.0/index.html">Interface para o VISUAL VCUBE</a>
+
+<br>
+<br>
+
+<table width="100%"><tbody><tr><td bgcolor="green"><font color="white"><b>&nbsp; Biblioteca
+SMPL </b></font></td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td bgcolor="lightgreen"><font color="green"><b>&nbsp;
+<em>Simulation Programming Language</em> - Biblioteca C, C++ para Simulação
+baseada em Eventos Discretos</b></font></td></tr></tbody></table>
+<center>
+
+<p>
+<a href="https://www.inf.ufpr.br/elias/sisdis/smpl.c">smpl.c</a>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<a href="https://www.inf.ufpr.br/elias/sisdis/smpl.h">smpl.h</a>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="https://www.inf.ufpr.br/elias/sisdis/rand.c">rand.c</a>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<a href="https://www.inf.ufpr.br/elias/sisdis/makefile">makefile</a>
+</p>
+
+<br>
+
+<a href="https://www.inf.ufpr.br/elias/sisdis/hipercubo.c.txt">hipercubo.c</a>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="https://www.inf.ufpr.br/elias/sisdis/cisj.c.txt">cisj.c</a>
+
+<br>
+<br>
+</center>
+
+<table width="100%"><tbody><tr><td bgcolor="green"><font color="white"><b>&nbsp; Referências
+</b></font></td></tr></tbody></table>
+
+<p>
+Não há um único livro texto para esta disciplina. Alguns dos tópicos
+aparecem em livros, outros em artigos. Uma lista de livros sugeridos segue abaixo:
+
+</p><ul>
+
+<li> A. D. Kshemkalyani, M. Singhal, <em>Distributed Computing: Principles,
+Algorithms, and Systems</em>, Cambridge U. Press, 2008.
+<br>
+
+</li><li> C. Cachin, R. Guerraoui, L. Rodrigues, <em>Introduction to Reliable and
+Secure Distributed Programming</em>, Springer, 2011.
+<br>
+
+</li><li> S. Mullender (Editor), <em>Distributed Systems</em>, 2nd Edition, ACM Press, 1993.
+<br>
+
+</li><li> P. Jalote, <em>Fault Tolerance in Distributed Systems</em>, Prentice-Hall, 1994.
+<br>
+
+</li><li> D. K. Pradhan (Editor), <em>Fault-Tolerant Computer System Design</em>, Prentice-Hall, 1996.
+<br>
+
+</li><li> B. Charron-Bost, F. Pedone, A. Schipper (Editors) <em>Replication: Theory and
+Practice</em>, Springer, 2010.
+<br>
+
+</li></ul>
+
+<p>No primeiro semestre de 2020 vamos usar na segunda parte da disciplina o livro "Introduction to Reliable Distributed 
+Programming" que está disponível em versão digital na Biblioteca da UFPR. Para acessar o pdf faça:
+
+</p><ol>
+<li> Acesse o <a href="http://www.portal.ufpr.br/">Portal da UFPR</a> 
+</li><li> No campo "Busca Integrada ao Acervo UFPR", digite: "Introduction to Reliable Distributed Programming"
+</li><li> Verifique se o seletor está selecionado "Todo o Conteúdo"
+</li><li> Pressione o botão "Pesquisar"
+</li><li> Na nova guia que abrir, selecione o primeiro item da resultante da busca
+</li><li> Role a página um pouco até encontrar o campo "Acesso online:"
+</li><li> Clique no link ao lado deste campo recém encontrado
+</li><li> Uma nova aba abrirá, nesta clique no botão Download Book(PDF, 2432 KB)
+</li></ol>
+
+<p>
+Alguns dos artigos importantes neste semestre são:
+
+</p><ul> 
+
+<li> Algirdas Avizienis, Jean-Claude Laprie, Brian Randell, Carl
+E. Landwehr, "Basic Concepts and Taxonomy of Dependable and Secure
+Computing," <em>IEEE Transations on Dependable and Secure Computing</em>,
+pp. 11-33, Vol. 1, No. 1, 2004.
+
+</li><li> Ronald P. Bianchini Jr., Richard W. Buskens, "Implementation of 
+On-Line Distributed System-Level Diagnosis Theory," <em>IEEE Transactions 
+on Computers</em>, pp. 616-626, Vol. 41, No. 5, 1992.
+
+</li><li> Fred B. Schneider, "Implementing Fault-Tolerant Services Using the State Machine Approach: 
+A Tutorial," <em>ACM Computing Surveys</em>, pp. 299-319, Vol. 22, No. 4, 1990.
+
+</li></ul>
+
+<br>
+<hr>
+
+<center>
+<a href="http://www.ufpr.br/">UFPR</a> &nbsp;
+<a href="http://www.inf.ufpr.br/">Departamento de Informática</a> &nbsp;
+<a href="http://www.inf.ufpr.br/elias">Prof. Elias P. Duarte Jr.</a>
+        
+</center>
+
+</td>
+</tr></tbody></table>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = \"{U}A-1092549-2";
+urchinTracker();
+</script>
+</body></html>
