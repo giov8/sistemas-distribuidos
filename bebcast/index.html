@@ -74,16 +74,16 @@ table, th, td {
 
 <h2 style="font-family:verdana;">Relatório</h2>
 <h3 style="font-family:verdana;">Definições</h3>
-<p style="font-family:verdana;">O programa possui definições de constantes para valores que representa o TESTE, RECUPERAÇÃO e FALHA dos processos. Essas definições são utilizadas para dar mais legibilidade na simulação. Outras definições são o tempo máximo de execução do programa e o intervalo de testes. Em todos os logs o intervalo de testes utilizado foi 30.0 unidades de tempo.<br>O tipo processo criado para essa simulação contém: id, que é o identificador da facility do SMPL; state, que é o vetor de estados dos demais processos e s, que representa o cluster atual que o processo está testando.</p>
+<p style="font-family:verdana;">O programa possui definições de constantes para valores que representa o TESTE, RECUPERAÇÃO e FALHA dos processos. Essas definições são utilizadas para dar mais legibilidade na simulação. Outras definições são o tempo máximo de execução do programa e o intervalo de testes. O intervalo de testes está especificado em cada log.<br>O tipo processo criado para essa simulação contém: id, que é o identificador da facility do SMPL; state, que é o vetor de estados dos demais processos. O valor s que representava o cluster atual do processo foi removido TipoProcesso devido a modidicação do VCube (ver abaixo).</p>
 
 <h3 style="font-family:verdana;">Funções</h3>
-<p style="font-family:verdana;">Duas funções foram criadas para auxiliar a implementação das duas versões do vcube, são elas:<br><b>call_cisj:</b> Como explicado acima, essa função chama o programa cisj e retorna o valor o j-ésimo valor da tabela c(i,s) para ser utilizado nos teste.<br>
-<b>pow_int:</b> Implementação simples da potenciação apenas com números inteiros. A função pow() da biblioteca math.c trabalha com double, então preferi criar a minha para simplificar.</p>
+<p style="font-family:verdana;">As seguintes funções foram criadas para auxiliar a implementação do vcube e do BEBCast:<br><b>call_cisj:</b> Como explicado acima, essa função chama o programa externo cisj e retorna o valor o j-ésimo valor da tabela c(i,s) para ser utilizado nos teste.<br>
+<b>pow_int:</b> Implementação simples da potenciação apenas com números inteiros. A função pow() da biblioteca math.c trabalha com double, então preferi criar a minha para simplificar.
+<br><b>cluster(i,j):</b> Retorna o cluster de j no qual i pertence.
+<br><b>ff_neighbour(i, s):</b> Com base no vetor state passado como parâmetro e utilizando a função call_cisj, retorna o primeiro vizinho de <b>i</b> no cluster <b>s</b> não-falho.
+</p>
 
-<h3 style="font-family:verdana;">Diagnóstico</h3>
-<p style="font-family:verdana;">Os programas funciona basicamente como se tivesse dois modos: modo diagnóstico em andamento e modo diagnóstico desabilitado. No início de cada programa o modo diagnostico está sempre desabilitado. O modo diagnóstico entra em andamento sempre que há uma requisição de FALHA ou RECUPERAÇÃO, através de uma variávlç booleana. Os testes efetuados e rodadas que se passaram no modo diagnóstico são salvas em contadores. Também é salvo o processo de que se trata o diagnóstico. Apenas um diagnóstico pode acontecer por vez. O primeiro processo que "descobrir" que o processo mudou, vai ter o valor state do processo em diagnóstico salvo. Quando todos os processos (exceto processos falhos e o processo que se trata o diagnóstico) tiverem o mesmo valor nos seus vetores state, o evento foi diagnosticado e uma mensagem será impressa na tela.</p>
-
-<h3 style="font-family:verdana;">Versão 1 do VCUBE + Modificação</h3>
+<h3 style="font-family:verdana;">Versão 1 do VCUBE</h3>
 <p style="font-family:verdana;">Na versão 1 do VCUBE, primeiro é calculado o <i>s máximo</i> que representa o valor máximo que o s de cada processo vai ir. Cada rodada consiste em um cluster, este é incrementado ao começo de cada rodada. Durante a rodada, o programa chama a função c(i,s) que devolve o próximo que deve ser testado. Se o testado for correto, a iteração quebra e o proximo processo vai testar. Caso o processo esteja falho, ele vai testar o próximo valor que a função c(i,s) retornar. Se todos do cluster estiverem falhos, é o fim da rodada para este processo. Ao encontrar um processo correto, o processo copia os valores do vetor state do testado que não testou e estão no cluster atual.</p>
 <h4 style="font-family:verdana;">Modificação</h3>
 <p style="font-family:verdana;">Para a implementação desse trabalho, foi solicitado pelo professor duas mudanças no algoritmo:</p>
@@ -92,7 +92,10 @@ table, th, td {
   <li>Ao testar um processo sem falha o testador obtém todas as "novidades" do testado (não apenas do cluster do testado)</li>
 </ul> 
 <p style="font-family:verdana;">Essas mudanças foram feitas para que a latência que um evento leva para ser diagnosticado quando acontece um evento diminua.</p>
+<p style="font-family:verdana;"><b>Inicialização:</b> Levando em conta que o principal objetivo do trabalho é a implementação do algortimo do Best-Effort Broadcast, e o VCube é mais uma base para o algoritmo, a fase de <i>warm-up</i> do VCube foi encurtada. Agora, ao invés dos processos inicializarem com um valor desconhecido (-1), todos os processos são inicializados como corretos.</p>
 
+<h4 style="font-family:verdana;">Diagnóstico</h4>
+<p style="font-family:verdana;">Os programas funciona basicamente como se tivesse dois modos: modo diagnóstico em andamento e modo diagnóstico desabilitado. No início de cada programa o modo diagnostico está sempre desabilitado. O modo diagnóstico entra em andamento sempre que há uma requisição de FALHA ou RECUPERAÇÃO, através de uma variávlç booleana. Os testes efetuados e rodadas que se passaram no modo diagnóstico são salvas em contadores. Também é salvo o processo de que se trata o diagnóstico. Apenas um diagnóstico pode acontecer por vez. O primeiro processo que "descobrir" que o processo mudou, vai ter o valor state do processo em diagnóstico salvo. Quando todos os processos (exceto processos falhos e o processo que se trata o diagnóstico) tiverem o mesmo valor nos seus vetores state, o evento foi diagnosticado e uma mensagem será impressa na tela.
 <br>
 
 <h2 style="font-family:verdana;">Logs</h2>
