@@ -1,0 +1,247 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+********** SIMULAÇÃO DO ALGORITMO BEST-EFFORT *********
+
+************* SOBRE O VCUBE V1 MODIFICADO *************
+
+QUANTIDADE DE PROCESSOS: 16 processos
+INTERVALO DE TESTES:  1.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 200.0 unidades de tempo
+PROCESSO ORIGEM DO BROADCAST: 0
+****************************************************
+DEFINIÇÕES:
+
+MODO: PADRÃO
+PROCESSO: 8 FALHARÁ NO TEMPO 15.0
+****************************************************
+
+Início da execução...
+
+
+O processo 0 está iniciando um broadcast...
+
+
+0 enviou uma mensagem para 1
+0 enviou uma mensagem para 2
+0 enviou uma mensagem para 4
+0 enviou uma mensagem para 8
+TEMPO: 10.000000
+
+token 1 
+o2
+1 recebeu uma mensagem de 0
+1 enviou um mensagem ACK para 0
+Mensagem 101 liberada
+TEMPO: 10.000000
+
+token 2 
+o2
+2 recebeu uma mensagem de 0
+2 enviou uma mensagem para 3
+TEMPO: 10.000000
+
+token 4 
+o2
+4 recebeu uma mensagem de 0
+4 enviou uma mensagem para 6
+4 enviou uma mensagem para 5
+TEMPO: 10.000000
+
+token 8 
+o2
+8 recebeu uma mensagem de 0
+8 enviou uma mensagem para 12
+8 enviou uma mensagem para 10
+8 enviou uma mensagem para 9
+
+O processo 8 falhou no tempo 15.0
+
+o5
+4 detectou que o processo 8 falhou
+o1
+o1
+o5
+2 detectou que o processo 8 falhou
+o1
+o5
+0 detectou que o processo 8 falhou
+0 enviou uma mensagem para 9
+
+A falha do processo 8 foi diagnosticada 
+TEMPO: 20.000000
+
+token 0 
+o2
+0 recebeu uma mensagem ACK de 1
+o3
+Mensagem 1115 liberada
+TEMPO: 20.000000
+
+token 3 
+o2
+3 recebeu uma mensagem de 2
+3 enviou um mensagem ACK para 2
+Mensagem 1125 liberada
+TEMPO: 20.000000
+
+token 6 
+o2
+6 recebeu uma mensagem de 4
+6 enviou uma mensagem para 7
+TEMPO: 20.000000
+
+token 5 
+o2
+5 recebeu uma mensagem de 4
+5 enviou um mensagem ACK para 4
+Mensagem 1147 liberada
+TEMPO: 20.000000
+
+token 12 
+o2
+12 recebeu uma mensagem de 8
+TEMPO: 20.000000
+
+token 10 
+o2
+10 recebeu uma mensagem de 8
+TEMPO: 20.000000
+
+token 9 
+o2
+9 recebeu uma mensagem de 8
+TEMPO: 26.000000
+
+token 9 
+o2
+9 recebeu uma mensagem de 0
+9 enviou uma mensagem para 13
+9 enviou uma mensagem para 11
+TEMPO: 30.000000
+
+token 2 
+o2
+2 recebeu uma mensagem ACK de 3
+o3
+Mensagem 21311 liberada
+2 enviou um mensagem ACK para 0
+Mensagem 102 liberada
+TEMPO: 30.000000
+
+token 7 
+o2
+7 recebeu uma mensagem de 6
+7 enviou um mensagem ACK para 6
+Mensagem 21611 liberada
+TEMPO: 30.000000
+
+token 4 
+o2
+4 recebeu uma mensagem ACK de 5
+o3
+Mensagem 21512 liberada
+TEMPO: 36.000000
+
+token 13 
+o2
+13 recebeu uma mensagem de 9
+13 enviou uma mensagem para 15
+13 enviou uma mensagem para 12
+TEMPO: 36.000000
+
+token 11 
+o2
+11 recebeu uma mensagem de 9
+11 enviou uma mensagem para 10
+TEMPO: 40.000000
+
+token 0 
+o2
+0 recebeu uma mensagem ACK de 2
+o3
+Mensagem 31213 liberada
+TEMPO: 40.000000
+
+token 6 
+o2
+6 recebeu uma mensagem ACK de 7
+o3
+Mensagem 31713 liberada
+6 enviou um mensagem ACK para 4
+Mensagem 1146 liberada
+TEMPO: 46.000000
+
+token 15 
+o2
+15 recebeu uma mensagem de 13
+15 enviou uma mensagem para 14
+TEMPO: 46.000000
+
+token 12 
+o2
+12 recebeu uma mensagem de 13
+12 enviou um mensagem ACK para 13
+Mensagem 371313 liberada
+TEMPO: 46.000000
+
+token 10 
+o2
+10 recebeu uma mensagem de 11
+10 enviou um mensagem ACK para 11
+Mensagem 371114 liberada
+TEMPO: 50.000000
+
+token 4 
+o2
+4 recebeu uma mensagem ACK de 6
+o3
+Mensagem 41613 liberada
+4 enviou um mensagem ACK para 0
+Mensagem 103 liberada
+TEMPO: 56.000000
+
+token 14 
+o2
+14 recebeu uma mensagem de 15
+14 enviou um mensagem ACK para 15
+Mensagem 471513 liberada
+TEMPO: 56.000000
+
+token 13 
+o2
+13 recebeu uma mensagem ACK de 12
+o3
+Mensagem 471214 liberada
+TEMPO: 56.000000
+
+token 11 
+o2
+11 recebeu uma mensagem ACK de 10
+o3
+Mensagem 471014 liberada
+11 enviou um mensagem ACK para 9
+Mensagem 27913 liberada
+TEMPO: 60.000000
+
+token 0 
+o2
+0 recebeu uma mensagem ACK de 4
+o3
+Mensagem 51413 liberada
+TEMPO: 66.000000
+
+token 15 
+o2
+15 recebeu uma mensagem ACK de 14
+o3
+Mensagem 571413 liberada
+15 enviou um mensagem ACK para 13
+Mensagem 371312 liberada
+TEMPO: 66.000000
+
+token 9 
+o2
+9 recebeu uma m

@@ -1,0 +1,70 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+********** SIMULAÇÃO DO ALGORITMO BEST-EFFORT *********
+
+************* SOBRE O VCUBE V1 MODIFICADO *************
+
+QUANTIDADE DE PROCESSOS: 8 processos
+INTERVALO DE TESTES: 10.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 249.0 unidades de tempo
+PROCESSO ORIGEM DO BROADCAST: 0
+****************************************************
+DEFINIÇÕES:
+
+MODO: PADRÃO
+****************************************************
+
+Início da execução...
+
+
+O processo 0 está iniciando um broadcast...
+
+
+0 enviou uma mensagem para 1
+0 enviou uma mensagem para 2
+0 enviou uma mensagem para 4
+
+1 recebeu uma mensagem de 0
+1 enviou um mensagem ACK para 0
+
+2 recebeu uma mensagem de 0
+2 enviou uma mensagem para 3
+
+4 recebeu uma mensagem de 0
+4 enviou uma mensagem para 6
+4 enviou uma mensagem para 5
+
+0 recebeu uma mensagem ACK de 1
+
+3 recebeu uma mensagem de 2
+3 enviou um mensagem ACK para 2
+
+6 recebeu uma mensagem de 4
+6 enviou uma mensagem para 7
+
+5 recebeu uma mensagem de 4
+5 enviou um mensagem ACK para 4
+
+2 recebeu uma mensagem ACK de 3
+2 enviou um mensagem ACK para 0
+
+7 recebeu uma mensagem de 6
+7 enviou um mensagem ACK para 6
+
+4 recebeu uma mensagem ACK de 5
+
+0 recebeu uma mensagem ACK de 2
+
+6 recebeu uma mensagem ACK de 7
+6 enviou um mensagem ACK para 4
+
+4 recebeu uma mensagem ACK de 6
+4 enviou um mensagem ACK para 0
+
+0 recebeu uma mensagem ACK de 4
+O processo 0 realizou o broadcast com sucesso.
+
+Fim da execução.

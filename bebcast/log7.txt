@@ -1,0 +1,133 @@
+****************************************************
+ALUNO: Giovani G. Marciniak
+PROFESOR: Elias P. Duarte Jr.
+DISCIPLINA: Sistemas Distribuídos
+
+********** SIMULAÇÃO DO ALGORITMO BEST-EFFORT *********
+
+************* SOBRE O VCUBE V1 MODIFICADO *************
+
+QUANTIDADE DE PROCESSOS: 16 processos
+INTERVALO DE TESTES:  1.0 unidades de tempo
+TEMPO MÁXIMO DE EXECUÇÃO: 200.0 unidades de tempo
+PROCESSO ORIGEM DO BROADCAST: 0
+****************************************************
+DEFINIÇÕES:
+
+MODO: PADRÃO
+PROCESSO: 8 FALHARÁ NO TEMPO 15.0
+****************************************************
+
+Início da execução...
+
+
+O processo 0 está iniciando um broadcast...
+
+
+0 enviou uma mensagem para 1
+0 enviou uma mensagem para 2
+0 enviou uma mensagem para 4
+0 enviou uma mensagem para 8
+
+1 recebeu uma mensagem de 0
+1 enviou um mensagem ACK para 0
+
+2 recebeu uma mensagem de 0
+2 enviou uma mensagem para 3
+
+4 recebeu uma mensagem de 0
+4 enviou uma mensagem para 6
+4 enviou uma mensagem para 5
+
+8 recebeu uma mensagem de 0
+8 enviou uma mensagem para 12
+8 enviou uma mensagem para 10
+8 enviou uma mensagem para 9
+
+O processo 8 falhou no tempo 15.0
+
+4 detectou que o processo 8 falhou
+2 detectou que o processo 8 falhou
+0 detectou que o processo 8 falhou
+0 enviou uma mensagem para 9
+
+A falha do processo 8 foi diagnosticada 
+
+0 recebeu uma mensagem ACK de 1
+
+3 recebeu uma mensagem de 2
+3 enviou um mensagem ACK para 2
+
+6 recebeu uma mensagem de 4
+6 enviou uma mensagem para 7
+
+5 recebeu uma mensagem de 4
+5 enviou um mensagem ACK para 4
+
+12 recebeu uma mensagem de 8
+
+10 recebeu uma mensagem de 8
+
+9 recebeu uma mensagem de 8
+
+9 recebeu uma mensagem de 0
+9 enviou uma mensagem para 13
+9 enviou uma mensagem para 11
+
+2 recebeu uma mensagem ACK de 3
+2 enviou um mensagem ACK para 0
+
+7 recebeu uma mensagem de 6
+7 enviou um mensagem ACK para 6
+
+4 recebeu uma mensagem ACK de 5
+
+13 recebeu uma mensagem de 9
+13 enviou uma mensagem para 15
+13 enviou uma mensagem para 12
+
+11 recebeu uma mensagem de 9
+11 enviou uma mensagem para 10
+
+0 recebeu uma mensagem ACK de 2
+
+6 recebeu uma mensagem ACK de 7
+6 enviou um mensagem ACK para 4
+
+15 recebeu uma mensagem de 13
+15 enviou uma mensagem para 14
+
+12 recebeu uma mensagem de 13
+12 enviou um mensagem ACK para 13
+
+10 recebeu uma mensagem de 11
+10 enviou um mensagem ACK para 11
+
+4 recebeu uma mensagem ACK de 6
+4 enviou um mensagem ACK para 0
+
+14 recebeu uma mensagem de 15
+14 enviou um mensagem ACK para 15
+
+13 recebeu uma mensagem ACK de 12
+
+11 recebeu uma mensagem ACK de 10
+11 enviou um mensagem ACK para 9
+
+0 recebeu uma mensagem ACK de 4
+
+15 recebeu uma mensagem ACK de 14
+15 enviou um mensagem ACK para 13
+
+9 recebeu uma mensagem ACK de 11
+
+13 recebeu uma mensagem ACK de 15
+13 enviou um mensagem ACK para 9
+
+9 recebeu uma mensagem ACK de 13
+9 enviou um mensagem ACK para 0
+
+0 recebeu uma mensagem ACK de 9
+O processo 0 realizou o broadcast com sucesso.
+
+Fim da execução.
